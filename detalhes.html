@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlackMotos Baixada - Detalhes da Moto</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="detalhes.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Black Motos Baixada" />
+        </a>
+      </div>
+      <div class="top-search">
+      <input type="text" id="searchInput" placeholder="Pesquisar motos..." />
+      <i class="fas fa-search search-icon" id="searchBtn" role="button" aria-label="Buscar" tabindex="0"></i>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61579322196709" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/blackmotosbaixada/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/5513997730431" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="#" id="baixadablackmotos@gmail.com" aria-label="Enviar email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="motos.html">Motos</a></li>
+      <li><a href="financiamento.html">Financiamento</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="localizacao.html">Localização</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Início</a>
+      <span class="separator">></span>
+      <a href="motos.html">Motos</a>
+      <span class="separator">></span>
+      <span id="breadcrumbMoto">Carregando...</span>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="detalhes-main">
+    <div class="container">
+      <div class="detalhes-grid">
+        <!-- GALERIA DE IMAGENS -->
+        <div class="galeria-container">
+          <div class="galeria-principal">
+            <img id="imagemPrincipal" src="images/MT07.jpg" alt="Imagem da moto" />
+            <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+            <button class="nav-btn next-btn" id="nextBtn">›</button>
+          </div>
+          <div class="miniaturas" id="miniaturas">
+            <!-- Miniaturas serão geradas dinamicamente -->
+          </div>
+        </div>
+
+        <!-- INFORMAÇÕES DA MOTO -->
+        <div class="info-container">
+          <div class="moto-header">
+            <p class="categoria-ano" id="categoriaAno">CATEGORIA • USADO • ANO/ANO</p>
+            <h1 id="nomeMoto">Nome da Moto</h1>
+            <div class="preco-principal" id="precoMoto">R$ 0,00</div>
+          </div>
+
+          <!-- BADGES -->
+          <div class="badges-container" id="badgesContainer">
+            <!-- Badges serão geradas dinamicamente -->
+          </div>
+
+          <!-- INFORMAÇÕES RÁPIDAS -->
+          <div class="info-rapida">
+            <div class="info-item">
+              <i class="fas fa-calendar"></i>
+              <div>
+                <span class="label">Ano</span>
+                <span class="valor" id="anoMoto">0000</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <div>
+                <span class="label">Quilometragem</span>
+                <span class="valor" id="quilometragemMoto">0 km</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-cogs"></i>
+              <div>
+                <span class="label">Câmbio</span>
+                <span class="valor" id="cambioMoto">Manual</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-palette"></i>
+              <div>
+                <span class="label">Cor</span>
+                <span class="valor" id="corMoto">Cor</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-gas-pump"></i>
+              <div>
+                <span class="label">Combustível</span>
+                <span class="valor" id="combustivelMoto">Gasolina</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-motorcycle"></i>
+              <div>
+                <span class="label">Categoria</span>
+                <span class="valor" id="categoriaMoto">Categoria</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AÇÕES -->
+          <div class="acoes-container">
+            <a href="#" class="btn btn-whatsapp" id="btnWhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              Fazer Proposta
+            </a>
+            <a href="financiamento.html" class="btn btn-financiar">
+              <i class="fas fa-calculator"></i>
+              Financiar
+            </a>
+            <button class="btn btn-compartilhar" id="btnCompartilhar">
+              <i class="fas fa-share-alt"></i>
+              Compartilhar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESCRIÇÃO E ESPECIFICAÇÕES -->
+      <div class="detalhes-extras">
+        <div class="descricao-container">
+          <h3>Descrição</h3>
+          <p id="descricaoMoto">Descrição da motocicleta...</p>
+        </div>
+        <div class="specs-container">
+          <h3>Especificações</h3>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <span class="spec-label">Marca:</span>
+              <span class="spec-value" id="marcaMoto">-</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Modelo:</span>
+              <span class="spec-value" id="modeloMoto">-</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Categoria:</span>
+              <span class="spec-value" id="categoriaSpec">-</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Combustível:</span>
+              <span class="spec-value" id="combustivelSpec">-</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Ano:</span>
+              <span class="spec-value" id="anoSpec">-</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Quilometragem:</span>
+              <span class="spec-value" id="kmSpec">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOTOS RELACIONADAS -->
+    <div class="relacionadas-container">
+      <div class="container">
+        <h3>Motos Relacionadas</h3>
+        <div class="motos" id="motosRelacionadas">
+          <!-- Cards relacionados serão gerados dinamicamente -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="site-map">
+        <h4>Mapa do site</h4>
+        <ul>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="localizacao.html">Localização</a></li>
+          <li><a href="motos.html">Motos</a></li>  
+          <li><a href="financiamento.html">Financiamento</a></li>
+          <li><a href="vendidos.html">Veículos Vendidos</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          <li><a href="politica.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-text">
+        <p>Encontre sua motocicleta ou veículo usada (seminova) ou nova em Santos, São Paulo - Black Motos Baixada. Encontre diversos modelos de motos e veículos novos e seminovos (usados) através do Site da Black Motos Baixada em Santos. Nosso estoque de motocicletas e veículos oferece vários modelos semi-novos (usados) e novos de diversas marcas e ainda oferecemos as melhores formas de pagamento e financiamento; encontre tudo isto na Black Motos Baixada em Santos. Aqui na Black Motos Baixada você encontra a melhor oferta para a moto ou veículo que você procura e tem acesso as melhores formas de pagamento e as melhores formas de financiamento. Aqui na Black Motos Baixada você pode financiar, avaliar ou comprar sua moto ou automóvel novo ou usado (semi novo); confira já nossas melhores ofertas. Faça uma busca para garantir a sua moto ou seu carro semi-novo (usado) ou novo agora mesmo. Tenha a sua moto ou carro novo ou usado (seminovo) com as melhores condições de pagamento ou financiamento. Confira nosso estoque de motos e as melhores ofertas para que você faça sempre um ótimo negócio. Aqui você tem a melhor oferta para moto usada (seminova) ou nova. Entre em contato conosco e realize seu sonho! Na Black Motos Baixada você encontra as melhores marcas e melhores modelos, entre em contato com nossos vendedores! Motocicletas e veículos novos ou semi-novos (usados) na Black Motos Baixada em Santos, São Paulo.</p>
+      </div>
+    </div>
+    <div class="footer-center">
+      <p>© 2025 - Todos os direitos reservados.</p>
+      <p>Desenvolvido por <strong>Everton Moy</strong></p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+<script>
+// Script específico para página de detalhes
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const motoId = parseInt(urlParams.get('id'));
+    
+    if (!motoId) {
+        document.getElementById('nomeMoto').textContent = 'Moto não encontrada';
+        return;
+    }
+
+    // Buscar dados da moto no script.js
+    const moto = motosData.find(m => m.id === motoId);
+    
+    if (!moto) {
+        document.getElementById('nomeMoto').textContent = 'Moto não encontrada';
+        return;
+    }
+
+    // Preencher informações da moto
+    document.getElementById('breadcrumbMoto').textContent = `${moto.marca} ${moto.nome}`;
+    document.getElementById('categoriaAno').textContent = `${moto.categoria.toUpperCase()} • USADO • ${moto.ano}/${moto.ano}`;
+    document.getElementById('nomeMoto').textContent = `${moto.marca} ${moto.nome}`;
+    document.getElementById('precoMoto').textContent = `R$ ${moto.preco.toLocaleString('pt-BR')}`;
+    document.getElementById('anoMoto').textContent = moto.ano;
+    document.getElementById('quilometragemMoto').textContent = `${moto.quilometragem.toLocaleString()} km`;
+    document.getElementById('cambioMoto').textContent = moto.cambio;
+    document.getElementById('corMoto').textContent = moto.cor;
+    document.getElementById('combustivelMoto').textContent = moto.combustivel;
+    document.getElementById('categoriaMoto').textContent = moto.categoria;
+    document.getElementById('descricaoMoto').textContent = moto.descricao;
+    
+    // Especificações
+    document.getElementById('marcaMoto').textContent = moto.marca;
+    document.getElementById('modeloMoto').textContent = moto.nome;
+    document.getElementById('categoriaSpec').textContent = moto.categoria;
+    document.getElementById('combustivelSpec').textContent = moto.combustivel;
+    document.getElementById('anoSpec').textContent = moto.ano;
+    document.getElementById('kmSpec').textContent = `${moto.quilometragem.toLocaleString()} km`;
+
+    // Gerar badges
+    const badgesContainer = document.getElementById('badgesContainer');
+    badgesContainer.innerHTML = '';
+    
+    if (moto.zeroKm) {
+        badgesContainer.innerHTML += '<span class="badge badge-positive">Zero KM</span>';
+    }
+    if (moto.unicoDono) {
+        badgesContainer.innerHTML += '<span class="badge badge-positive">Único Dono</span>';
+    }
+    if (moto.revisada) {
+        badgesContainer.innerHTML += '<span class="badge badge-positive">Revisada</span>';
+    }
+    if (moto.garantia) {
+        badgesContainer.innerHTML += '<span class="badge badge-positive">Garantia</span>';
+    }
+
+    // Configurar imagens (múltiplas imagens da mesma moto)
+    const imagens = [
+        `images/${moto.imagem}`,
+        `images/${moto.imagem}`,
+        `images/${moto.imagem}`,
+        `images/${moto.imagem}`
+    ];
+    
+    let currentImageIndex = 0;
+    const imagemPrincipal = document.getElementById('imagemPrincipal');
+    const miniaturas = document.getElementById('miniaturas');
+    
+    // Gerar miniaturas
+    miniaturas.innerHTML = '';
+    imagens.forEach((img, index) => {
+        const miniatura = document.createElement('div');
+        miniatura.className = `miniatura ${index === 0 ? 'active' : ''}`;
+        miniatura.innerHTML = `<img src="${img}" alt="Imagem ${index + 1}">`;
+        miniatura.onclick = () => {
+            currentImageIndex = index;
+            imagemPrincipal.src = img;
+            document.querySelectorAll('.miniatura').forEach(m => m.classList.remove('active'));
+            miniatura.classList.add('active');
+        };
+        miniaturas.appendChild(miniatura);
+    });
+
+    // Navegação de imagens
+    document.getElementById('prevBtn').onclick = () => {
+        currentImageIndex = currentImageIndex === 0 ? imagens.length - 1 : currentImageIndex - 1;
+        imagemPrincipal.src = imagens[currentImageIndex];
+        document.querySelectorAll('.miniatura').forEach((m, i) => {
+            m.classList.toggle('active', i === currentImageIndex);
+        });
+    };
+
+    document.getElementById('nextBtn').onclick = () => {
+        currentImageIndex = currentImageIndex === imagens.length - 1 ? 0 : currentImageIndex + 1;
+        imagemPrincipal.src = imagens[currentImageIndex];
+        document.querySelectorAll('.miniatura').forEach((m, i) => {
+            m.classList.toggle('active', i === currentImageIndex);
+        });
+    };
+
+    // Configurar botões de ação
+    const btnWhatsApp = document.getElementById('btnWhatsApp');
+    const mensagem = `Olá! Tenho interesse na ${moto.marca} ${moto.nome} ${moto.ano} por R$ ${moto.preco.toLocaleString('pt-BR')}. Podemos conversar?`;
+    btnWhatsApp.href = `https://wa.me/5513997730431?text=${encodeURIComponent(mensagem)}`;
+
+    document.getElementById('btnCompartilhar').onclick = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: `${moto.marca} ${moto.nome}`,
+                text: `Confira esta ${moto.marca} ${moto.nome} por R$ ${moto.preco.toLocaleString('pt-BR')}`,
+                url: window.location.href
+            });
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link copiado para a área de transferência!');
+        }
+    };
+
+    // Gerar motos relacionadas
+    const motosRelacionadas = motosData.filter(m => 
+        m.id !== moto.id && 
+        (m.marca === moto.marca || m.categoria === moto.categoria)
+    ).slice(0, 3);
+
+    const container = document.getElementById('motosRelacionadas');
+    if (motosRelacionadas.length > 0) {
+        // Se há mais de uma moto relacionada, usar grid normal
+        if (motosRelacionadas.length > 1) {
+            container.style.display = 'grid';
+            container.style.gridTemplateColumns = `repeat(${Math.min(motosRelacionadas.length, 3)}, 1fr)`;
+        } else {
+            // Se há apenas uma moto relacionada, centralizar
+            container.style.display = 'flex';
+            container.style.justifyContent = 'center';
+        }
+        
+        container.innerHTML = '';
+        motosRelacionadas.forEach(motoRel => {
+            const card = document.createElement('div');
+            card.className = 'moto-card';
+            card.innerHTML = `
+                <div class="card-media">
+                    <img src="images/${motoRel.imagem}" alt="${motoRel.marca} ${motoRel.nome}">
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="subtitulo">${motoRel.categoria.toUpperCase()} • USADO • ${motoRel.ano}/${motoRel.ano}</p>
+                        <h3 class="modelo">${motoRel.marca} ${motoRel.nome}</h3>
+                        <p class="preco">R$ ${motoRel.preco.toLocaleString('pt-BR')}</p>
+                        <div class="info-icons">
+                            <div class="item">
+                                <i class="fas fa-calendar"></i>
+                                <span>${motoRel.ano}</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-palette"></i>
+                                <span>${motoRel.cor}</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-motorcycle"></i>
+                                <span>${motoRel.categoria}</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>${motoRel.quilometragem.toLocaleString()} km</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>${motoRel.combustivel}</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-cogs"></i>
+                                <span>${motoRel.cambio}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="detalhes.html?id=${motoRel.id}" class="btn-detalhes">Mais Detalhes</a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    } else {
+        container.innerHTML = '<p style="text-align: center; color: #666;">Nenhuma moto relacionada encontrada.</p>';
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1018 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Oxanium', sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background: #fff;
+}
+
+/* ==========================================================================
+   Variáveis CSS
+   ========================================================================== */
+:root {
+  --primary-color: #00aaff;
+  --dark-color: #111;
+  --dark-bg: #000;
+  --light-bg: #f5f5f5;
+  --text-light: #fff;
+  --text-muted: #555;
+  --logo-shift: 250px;
+  --search-shift: -130px;
+  --shadow-standard: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.logo {
+  margin-left: var(--logo-shift);
+}
+
+.logo img {
+  height: 120px;
+  display: block;
+}
+
+.top-search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 520px;
+  margin: 0 20px;
+  transform: translateX(var(--search-shift));
+}
+
+.top-search input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.top-search .search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--dark-bg);
+  cursor: pointer;
+  background: transparent;
+  line-height: 1;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.social-icons i {
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-icons i:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+.menu {
+  background: var(--dark-color);
+  padding: 10px 0;
+  border-top: 1px solid #1e1e1e;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 18px;
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+
+.menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.menu a:hover {
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Banner
+   ========================================================================== */
+.banner {
+  position: relative;
+  text-align: center;
+  background: var(--dark-bg);
+}
+
+.banner img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-text {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  color: var(--text-light);
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.estoque-pill {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  background: var(--primary-color);
+  color: #0b1220;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 20px 22px 20px 30px;
+  border-radius: 60px 0 0 60px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.estoque-pill:hover {
+  filter: brightness(0.9);
+}
+
+/* ==========================================================================
+   Busca
+   ========================================================================== */
+.busca {
+  padding: 22px 10px;
+  text-align: center;
+  background: var(--light-bg);
+}
+
+.busca select,
+.busca button {
+  padding: 10px 12px;
+  margin: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.busca button {
+  background: var(--primary-color);
+  border: none;
+  color: var(--text-light);
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.busca button:hover {
+  filter: brightness(0.9);
+}
+
+/* ==========================================================================
+   Destaques
+   ========================================================================== */
+.destaques {
+  padding: 34px 20px;
+  text-align: center;
+}
+
+.destaques h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  letter-spacing: 0.6px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.destaques-lead {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.title-with-lines {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.title-with-lines::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+  width: 160px;
+  height: 2px;
+  background: var(--dark-color);
+}
+
+.title-with-lines::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 120px;
+  height: 2px;
+  background: var(--dark-color);
+}
+
+/* ==========================================================================
+   Cards de Moto - Versão Corrigida e Padronizada
+   ========================================================================== */
+.motos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.moto-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow-standard);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 480px; /* Altura mínima fixa para todos os cards */
+}
+
+.moto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.moto-card .card-media {
+  width: 100%;
+  height: 180px; /* Altura fixa para todas as imagens */
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.moto-card .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.moto-card .card-body {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.moto-card .card-content {
+  flex: 1;
+}
+
+.moto-card h3 {
+  font-size: 16px;
+  margin: 0 0 4px 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: 'Oxanium', sans-serif;
+  line-height: 1.2;
+}
+
+.moto-card .subtitulo {
+  margin: 0 0 8px 0;
+  font-weight: normal;
+  color: #666;
+  font-size: 12px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.moto-card .modelo {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.moto-card .preco {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark-bg);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.moto-card .info-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 15px 0;
+}
+
+.moto-card .info-icons .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 10px 8px;
+  height: 65px; /* Altura fixa para os ícones */
+}
+
+.moto-card .info-icons .item i {
+  font-size: 18px;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.moto-card .info-icons .item span {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.moto-card .btn-detalhes {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 800;
+  padding: 12px 10px;
+  border-radius: 6px;
+  transition: filter 0.2s ease;
+  font-family: 'Oxanium', sans-serif;
+  margin-top: auto; /* Empurra o botão para o final do card */
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.moto-card .btn-detalhes:hover {
+  filter: brightness(1.1);
+}
+
+/* ==========================================================================
+   Contato
+   ========================================================================== */
+.contato {
+  background: var(--light-bg);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contato h3 {
+  margin: 0 0 18px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.contato-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.contato-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-standard);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contato-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
+.contato-box i {
+  font-size: 30px;
+  margin-bottom: 10px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.contato-box:hover i {
+  transform: scale(1.08);
+}
+
+.contato-box.whatsapp i { color: #25d366; }
+.contato-box.instagram i { color: #c13584; }
+.contato-box.telefone i { color: #e63946; }
+.contato-box.facebook i { color: #1877f2; }
+
+.contato-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
+  transition: bottom 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.contato-box:hover .contato-btn {
+  bottom: 0;
+}
+
+.contato-box.whatsapp .contato-btn { background: #25d366; }
+.contato-box.instagram .contato-btn { background: #c13584; }
+.contato-box.telefone .contato-btn { background: #e63946; }
+.contato-box.facebook .contato-btn { background: #1877f2; }
+
+@media (hover: none) {
+  .contato-btn { bottom: 0; }
+}
+
+/* ==========================================================================
+   Financiamento
+   ========================================================================== */
+.financiamento {
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.financiamento h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--dark-color);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.financiamento p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.financiamento ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 16px;
+  text-align: left;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.financiamento li {
+  margin: 10px 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.financiamento li:before {
+  content: "✓";
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.simulador {
+  background: var(--light-bg);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.simulador h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.simulador label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.simulador input,
+.simulador select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.simulador button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.simulador button:hover {
+  filter: brightness(0.9);
+}
+
+.resultado {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-top: 20px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+/* ==========================================================================
+   Instagram Bar
+   ========================================================================== */
+.instagram-bar {
+  background: linear-gradient(to right, var(--dark-bg), #1a1a1a);
+  color: var(--text-light);
+  height: 120px;
+  padding: 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagram-bar a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.instagram-bar i {
+  font-size: 38px;
+  margin-bottom: 8px;
+  color: var(--text-light);
+  line-height: 1;
+}
+
+.instagram-bar div {
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: 'Oxanium', sans-serif;
+}
+
+/* ==========================================================================
+   Localização
+   ========================================================================== */
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.mapa-info {
+  flex: 1;
+  max-width: 520px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+.mapa-info h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--dark-bg);
+  position: relative;
+  padding-bottom: 15px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.mapa-info h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark-bg);
+}
+
+.mapa-info p {
+  margin: 6px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.mapa iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.maps-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.maps-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* ==========================================================================
+   Quem Somos
+   ========================================================================== */
+.quem-somos {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.quem-somos h1 {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.quem-somos h2 {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+}
+
+.linha {
+  width: 150px;
+  height: 2px;
+  background-color: var(--dark-color);
+  margin: 15px auto;
+}
+
+.linha-menor {
+  width: 120px;
+  height: 2px;
+  background-color: var(--dark-color);
+  margin: 10px auto;
+}
+
+.quem-somos p {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-map {
+  flex: 0 0 180px;
+  min-width: 180px;
+  margin-top: 22px;
+}
+
+.site-map h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.site-map ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-map ul li {
+  margin-bottom: 8px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.footer-text {
+  flex: 1;
+  min-width: 320px;
+  margin-top: 22px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.footer-text p {
+  margin: 0;
+  font-family: 'Oxanium', sans-serif;
+  padding-top: 26px;
+}
+
+.footer-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-center p {
+  font-family: 'Oxanium', sans-serif;
+}
+
+/* ==========================================================================
+   Catálogo + Filtros
+   ========================================================================== */
+.catalogo-wrapper{max-width:1280px;margin:24px auto 40px;padding:0 20px;}
+.catalog-grid{display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:start;}
+@media (max-width:1024px){.catalog-grid{grid-template-columns:1fr;}}
+
+/* Barra superior do catálogo */
+.catalog-toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:#f6f6f6;border:1px solid #e5e5e5;border-radius:10px;
+  padding:10px 12px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04);
+  font-family:'Oxanium',sans-serif;
+}
+.toolbar-left{display:flex;align-items:center;gap:10px;font-size:12px;color:#555;}
+.toolbar-views{display:flex;gap:6px;}
+.toolbar-views button{width:32px;height:32px;border:1px solid #ddd;background:#fff;border-radius:6px;cursor:pointer;}
+.toolbar-right{display:flex;align-items:center;gap:10px;}
+.toolbar-right select,.toolbar-right button{
+  height:34px;padding:0 10px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;
+  font-family:'Oxanium',sans-serif;font-size:13px;
+}
+
+/* Sidebar de filtros */
+.filtros{
+  position:sticky;top:16px;align-self:start;
+  background:#fff;border:1px solid #e6e6e6;border-radius:12px;padding:14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);font-family:'Oxanium',sans-serif;
+}
+.filtros .grupo{padding:8px 0;margin:0 0 6px;}
+.filtros h4{
+  font-size:12px;margin:0 0 8px;padding:0 0 6px;border-bottom:1px solid #eee;
+  text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:#222;
+}
+.filtros .linha{
+  display:flex;align-items:center;gap:8px;margin:6px 0;padding:0;
+  width:auto;height:auto;background:transparent;border:0;
+}
+.filtros input[type="checkbox"]{width:16px;height:16px;flex:none;}
+.filtros label{
+  font-size:12px;color:#222;line-height:1.2;cursor:pointer;
+  display:inline-block;text-decoration:none !important;
+}
+.filtros input[type="range"]{width:100%;margin:6px 0 10px;display:block;}
+.filtros input[type="number"]{
+  height:34px;padding:0 8px;border:1px solid #ddd;border-radius:6px;width:100%;
+}
+.filtros .dupla{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.filtros .dupla input[type="number"]{
+  min-width:0;height:34px;padding:0 8px;border:1px solid #ddd;border-radius:6px;
+  background:#fff;line-height:1.2;
+}
+.filtros .acoes{display:flex;gap:8px;margin-top:10px;}
+.filtros .acoes .aplicar {
+  flex: 1;
+  border: 1px solid #111;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.filtros .acoes .limpar {
+  flex: 1;
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  color: #111;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.filtros .acoes .aplicar:hover,
+.filtros .acoes .limpar:hover {
+  filter: brightness(0.9);
+  transition: filter 0.2s ease;
+}
+.filtros .acoes .aplicar:focus,
+.filtros .acoes .limpar:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
+}
+.filtros{ position: sticky; top:16px; overflow:visible; }
+
+.card-meta{display:flex;justify-content:space-between;gap:6px;font-size:11px;color:#666;}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .logo img { height: 100px; }
+}
+
+@media (max-width: 900px) {
+  .logo { margin-left: 0; }
+  .logo img { height: 80px; }
+  .mapa iframe { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .motos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .moto-card {
+    min-height: 420px;
+  }
+  
+  .moto-card .card-media {
+    height: 160px;
+  }
+}
+
+@media (max-width: 560px) {
+  .motos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .moto-card {
+    min-height: 450px;
+  }
+  
+  .moto-card .card-media {
+    height: 180px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-map, .footer-text {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.encontre-moto {
+  background: var(--light-bg);
+  text-align: center;
+  padding: 18px 0 2px 0;
+}
+.encontre-moto .title-with-lines {
+  margin-bottom: 0;
+  font-size: 2rem;
+  color: var(--dark-color);
+  font-family: 'Oxanium', sans-serif;
+}
+
+.busca button, .busca button#buscarBtn {
+  background: #000 !important;
+  color: var(--text-light);
+  border: none;
+  font-weight: bold;
+  font-family: 'Oxanium', sans-serif;
+  transition: filter 0.2s ease;
+}
+.busca button:hover, .busca button#buscarBtn:hover {
+  filter: brightness(0.9);
+}
