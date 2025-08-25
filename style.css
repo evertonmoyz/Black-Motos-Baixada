@@ -24,16 +24,17 @@ body {
    Variáveis CSS
    ========================================================================== */
 :root {
-  --primary-color: #00aaff;
-  --dark-color: #111;
-  --dark-bg: #000;
-  --light-bg: #f5f5f5;
-  --text-light: #fff;
-  --text-muted: #555;
-  --logo-shift: 250px;
-  --search-shift: -130px;
-  --shadow-standard: 0 2px 6px rgba(0, 0, 0, 0.08);
+--primary-color: #00aaff;
+--dark-color: #111;
+--dark-bg: #000;
+--light-bg: #f5f5f5;
+--text-light: #fff;
+--text-muted: #555;
+--logo-shift: 0;            
+--search-shift: 0;            
+--shadow-standard: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
+
 
 /* ==========================================================================
    Header
@@ -1303,5 +1304,435 @@ header {
   }
 }
 
+/* ==========================================================================
+   AJUSTES MOBILE COMPLETOS - ADICIONAR NO FINAL
+========================================================================== */
 
+/* Variáveis responsivas adicionais */
+@media (max-width: 1024px) {
+  :root {
+    --logo-shift: 0;
+    --search-shift: 0;
+  }
+}
+
+/* ==========================================================================
+   HEADER MOBILE OTIMIZADO
+========================================================================== */
+
+@media (max-width: 1024px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    margin-left: 0;
+    order: 1;
+  }
+  
+  .logo img {
+    height: 80px;
+  }
+  
+  .top-search {
+    order: 2;
+    transform: none;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .social-icons {
+    order: 3;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 12px 15px;
+    gap: 12px;
+  }
+  
+  .logo img {
+    height: 70px;
+  }
+  
+  .top-search input {
+    padding: 12px 45px 12px 18px;
+    font-size: 16px; /* Evita zoom no iOS */
+    border-radius: 25px;
+  }
+  
+  .top-search .search-icon {
+    right: 15px;
+    font-size: 18px;
+  }
+  
+  .social-icons i {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .social-icons i {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================================================
+   MENU MOBILE
+========================================================================== */
+
+@media (max-width: 768px) {
+  .menu {
+    padding: 8px 0;
+  }
+  
+  .menu ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 0 15px;
+  }
+  
+  .menu a {
+    font-size: 14px;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+  .menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu ul {
+    gap: 10px;
+    padding: 0 10px;
+  }
+  
+  .menu a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+/* ==========================================================================
+   BANNER MOBILE
+========================================================================== */
+
+@media (max-width: 768px) {
+  .banner img {
+    height: 300px;
+  }
+  
+  .banner-text {
+    left: 15px;
+    bottom: 15px;
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+  
+  .estoque-pill {
+    top: 15px;
+    padding: 15px 18px 15px 25px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner img {
+    height: 250px;
+  }
+  
+  .banner-text {
+    left: 12px;
+    bottom: 12px;
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+  
+  .estoque-pill {
+    top: 12px;
+    padding: 12px 15px 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   BUSCA MOBILE OTIMIZADA
+========================================================================== */
+
+@media (max-width: 768px) {
+  .busca {
+    padding: 15px 8px;
+  }
+  
+  .busca select,
+  .busca button {
+    padding: 12px 10px;
+    margin: 4px;
+    font-size: 14px;
+    min-height: 44px; /* Touch target mínimo */
+    border-radius: 6px;
+  }
+  
+  .busca button {
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .busca {
+    padding: 12px 6px;
+  }
+  
+  .busca select,
+  .busca button {
+    display: block;
+    width: 100%;
+    margin: 3px 0;
+    padding: 14px 12px;
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   CARDS MOBILE MELHORADOS (SUBSTITUI OS EXISTENTES)
+========================================================================== */
+
+@media (max-width: 768px) {
+  .motos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .moto-card {
+    min-height: 400px;
+  }
+  
+  .moto-card .card-media {
+    height: 140px;
+  }
+  
+  .moto-card .card-body {
+    padding: 12px;
+  }
+  
+  .moto-card h3 {
+    font-size: 14px;
+  }
+  
+  .moto-card .preco {
+    font-size: 18px;
+  }
+  
+  .moto-card .info-icons .item {
+    height: 50px;
+    padding: 6px 4px;
+  }
+  
+  .moto-card .info-icons .item i {
+    font-size: 14px;
+  }
+  
+  .moto-card .info-icons .item span {
+    font-size: 9px;
+  }
+  
+  .moto-card .btn-detalhes {
+    padding: 10px 8px;
+    font-size: 13px;
+    min-height: 44px; /* Touch target */
+  }
+}
+
+@media (max-width: 560px) {
+  .motos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .moto-card {
+    min-height: 420px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .moto-card .card-media {
+    height: 180px;
+  }
+  
+  .moto-card .card-body {
+    padding: 15px;
+  }
+  
+  .moto-card .info-icons .item {
+    height: 55px;
+    padding: 8px 6px;
+  }
+  
+  .moto-card .info-icons .item i {
+    font-size: 16px;
+  }
+  
+  .moto-card .info-icons .item span {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================================
+   FILTROS MOBILE
+========================================================================== */
+
+@media (max-width: 768px) {
+  .filtros {
+    padding: 12px;
+  }
+  
+  .filtros input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .filtros label {
+    font-size: 13px;
+    min-height: 44px; /* Touch target */
+    display: flex;
+    align-items: center;
+  }
+  
+  .filtros input[type="number"] {
+    min-height: 44px;
+    font-size: 16px; /* Evita zoom no iOS */
+  }
+  
+  .filtros .acoes .aplicar,
+  .filtros .acoes .limpar {
+    min-height: 44px;
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   CONTATO MOBILE
+========================================================================== */
+
+@media (max-width: 768px) {
+  .contato-boxes {
+    gap: 15px;
+  }
+  
+  .contato-box {
+    width: 180px;
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .contato-box {
+    width: 100%;
+    max-width: 280px;
+    min-height: 120px;
+    flex-direction: row;
+    text-align: left;
+    padding: 15px;
+  }
+  
+  .contato-box i {
+    font-size: 24px;
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   WHATSAPP FLOAT MOBILE
+========================================================================== */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 15px;
+    font-size: 26px;
+  }
+}
+
+/* ==========================================================================
+   AJUSTES ESPECÍFICOS IOS/ANDROID
+========================================================================== */
+
+/* Corrige problemas de zoom em inputs no iOS */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* Melhora a área de toque para dispositivos touch */
+button,
+.btn,
+.btn-detalhes,
+a.btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Corrige overflow horizontal em dispositivos pequenos */
+body,
+html {
+  overflow-x: hidden;
+}
+
+/* Melhora o scroll suave em dispositivos móveis */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Remove bounce effect no iOS */
+body {
+  overscroll-behavior-y: contain;
+}
 
