@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackMotos Baixada - Início</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Black Motos Baixada">
+        </a>
+      </div>
+      <div class="top-search">
+        <input type="text" id="searchInput" placeholder="Pesquisar motos...">
+        <i class="fas fa-search search-icon" id="searchBtn" role="button" aria-label="Buscar" tabindex="0"></i>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61579322196709" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/blackmotosbaixada/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/5513997730431" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+5513997730431" aria-label="Ligar">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <nav class="menu" role="navigation">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="motos.html">Motos</a></li>
+        <li><a href="financiamento.html">Financiamento</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner" id="home">
+    <img src="images/banner.jpg" alt="Banner destaque">
+    <div class="banner-text">Motos para todos os estilos.</div>
+    <a href="motos.html" class="estoque-pill"><span>Veja nosso estoque</span></a>
+  </section>
+
+  <!-- ENCONTRE SUA MOTO -->
+  <section class="encontre-moto">
+    <h2 class="title-with-lines">ENCONTRE SUA MOTO</h2>
+  </section>
+
+  <!-- BUSCA -->
+  <section class="busca" aria-label="Filtros de busca">
+    <select aria-label="Marca" id="marcaSelect">
+      <option value="">Marca</option>
+      <option value="BMW">BMW</option>
+      <option value="Honda">Honda</option>
+      <option value="Yamaha">Yamaha</option>
+      <option value="Kawasaki">Kawasaki</option>
+      <option value="Triumph">Triumph</option>
+      <option value="HaoJue">HaoJue</option>
+      <option value="Suzuki">Suzuki</option>
+      <option value="Ducati">Ducati</option>
+      <option value="KTM">KTM</option>
+    </select>
+    <select aria-label="Modelo" id="modeloSelect">
+      <option value="">Modelo</option>
+    </select>
+    <select aria-label="Do ano" id="anoInicioSelect">
+      <option value="">Do ano</option>
+    </select>
+    <select aria-label="Ao ano" id="anoFimSelect">
+      <option value="">Ao ano</option>
+    </select>
+    <button id="buscarBtn">Buscar</button>
+  </section>
+
+  <!-- DESTAQUES - DINÂMICO -->
+  <section class="destaques" id="destaques">
+    <p class="destaques-lead">VEJA AS MOTOS SEPARADAS ESPECIALMENTE PARA VOCÊ</p>
+    <h2 class="title-with-lines">MOTOS EM DESTAQUE</h2>
+    <!-- Container dos cards que será preenchido dinamicamente -->
+    <div class="motos" id="motoList">  <!-- ✅ ESTE ELEMENTO JÁ EXISTE -->
+      <!-- Os 12 cards serão gerados dinamicamente pelo JavaScript -->
+    </div>
+  </section>
+
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <h3>ENTRE EM CONTATO CONOSCO!</h3>
+    <div class="contato-boxes">
+      <div class="contato-box whatsapp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <p>(13) 99773-0431</p>
+        <a class="contato-btn" href="https://wa.me/5513997730431" target="_blank" aria-label="Falar no WhatsApp">ENTRE EM CONTATO</a>
+      </div>
+      <div class="contato-box instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        <p>@blackmotosbaixada</p>
+        <a class="contato-btn" href="https://www.instagram.com/blackmotosbaixada/" target="_blank" aria-label="SIGA-NÓS NO INSTA">SIGA-NÓS NO INSTA</a>
+      </div>
+      <div class="contato-box telefone">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        <p>(13) 99773-0431</p>
+        <a class="contato-btn" href="tel:+5513997730431" aria-label="Ligar agora">ENTRE EM CONTATO</a>
+      </div>
+      <div class="contato-box facebook">
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        <p>/blackmotosbaixada</p>
+        <a class="contato-btn" href="https://www.facebook.com/profile.php?id=61579322196709" target="_blank" aria-label="Abrir Facebook">ENTRE EM CONTATO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM BAR -->
+  <div class="instagram-bar">
+    <a href="https://www.instagram.com/blackmotosbaixada/" target="_blank" rel="noopener" aria-label="Abrir Instagram">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+    <div>
+      SIGA-NOS NO INSTAGRAM <br><b>@blackmotosbaixada</b>
+    </div>
+  </div>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="mapa" id="localizacao">
+    <div class="mapa-info">
+      <h3>Confira Nossa Localização</h3>
+      <p><b>Endereço:</b> Rua Julio de Mesquita, 158 - Vila Matias, Santos - SP</p>
+      <p><b>Horário de atendimento:</b> Seg a Sex das 08h às 19h, Sáb das 08h às 14h</p>
+    </div>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.3174638634863!2d-46.32509448502049!3d-23.58820076812997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c7c2fcd0f15%3A0x6e14318a4cbe0!2sRua%20Julio%20de%20Mesquita%2C%20158%20-%20Vila%20Matias%2C%20Santos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1692287289000!5m2!1spt-BR!2sbr" 
+      width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="site-map">
+        <h4>Mapa do site</h4>
+        <ul>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="localizacao.html">Localização</a></li>
+          <li><a href="motos.html">Motos</a></li>  
+          <li><a href="financiamento.html">Financiamento</a></li>
+          <li><a href="vendidos.html">Veículos Vendidos</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          <li><a href="politica.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-text">
+        <p>Encontre sua motocicleta ou veículo usada (seminova) ou nova em Santos, São Paulo - Black Motos Baixada. Encontre diversos modelos de motos e veículos novos e seminovos (usados) através do Site da Black Motos Baixada em Santos. Nosso estoque de motocicletas e veículos oferece vários modelos semi-novos (usados) e novos de diversas marcas e ainda oferecemos as melhores formas de pagamento e financiamento; encontre tudo isto na Black Motos Baixada em Santos. Aqui na Black Motos Baixada você encontra a melhor oferta para a moto ou veículo que você procura e tem acesso as melhores formas de pagamento e as melhores formas de financiamento. Aqui na Black Motos Baixada você pode financiar, avaliar ou comprar sua moto ou automóvel novo ou usado (semi novo); confira já nossas melhores ofertas. Faça uma busca para garantir a sua moto ou seu carro semi-novo (usado) ou novo agora mesmo. Tenha a sua moto ou carro novo ou usado (seminovo) com as melhores condições de pagamento ou financiamento. Confira nosso estoque de motos e as melhores ofertas para que você faça sempre um ótimo negócio. Aqui você tem a melhor oferta para moto usada (seminova) ou nova. Entre em contato conosco e realize seu sonho! Na Black Motos Baixada você encontra as melhores marcas e melhores modelos, entre em contato com nossos vendedores! Motocicletas e veículos novos ou semi-novos (usados) na Black Motos Baixada em Santos, São Paulo.</p>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <p>© 2025 - Todos os direitos reservados.</p>
+      <p>Desenvolvido por <strong>Everton Moy</strong></p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5513997730431"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Fale conosco no WhatsApp">
+     <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- 1) carrega primeiro os dados e as funções (define window.motosData) -->
+  <script src="script.js"></script>
+
+  <!-- 2) depois vem o código inline (filtros + botão + destaque) -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    /* ---------- FILTROS (marca, modelo, ano) ---------- */
+    const marcaSel  = document.getElementById('marcaSelect');
+    const modeloSel = document.getElementById('modeloSelect');
+    const anoIniSel = document.getElementById('anoInicioSelect');
+    const anoFimSel = document.getElementById('anoFimSelect');
+    const btnBusca  = document.getElementById('buscarBtn');
+
+    // Marcas
+    const marcas = [...new Set(window.motosData.map(m => m.marca))].sort();
+    marcaSel.innerHTML = '<option value=\"\">Marca</option>';
+    marcas.forEach(m => {
+      const o = document.createElement('option');
+      o.value = o.text = m;
+      marcaSel.appendChild(o);
+    });
+
+    // Modelos e anos dependentes
+    function atualizarModelos() {
+      const modelos = window.motosData
+        .filter(m => !marcaSel.value || m.marca === marcaSel.value)
+        .map(m => m.nome);
+      const unicos = [...new Set(modelos)].sort();
+
+      modeloSel.innerHTML = '<option value=\"\">Modelo</option>';
+      unicos.forEach(md => {
+        const o = document.createElement('option');
+        o.value = o.text = md;
+        modeloSel.appendChild(o);
+      });
+      atualizarAnos();
+    }
+
+    function atualizarAnos() {
+      const anos = window.motosData
+        .filter(m =>
+          (!marcaSel.value  || m.marca === marcaSel.value) &&
+          (!modeloSel.value || m.nome  === modeloSel.value))
+        .map(m => m.ano);
+      const unicos = [...new Set(anos)].sort((a,b) => b - a);
+
+      anoIniSel.innerHTML = '<option value=\"\">Do ano</option>';
+      anoFimSel.innerHTML = '<option value=\"\">Ao ano</option>';
+      unicos.forEach(a => {
+        const o1 = document.createElement('option');
+        const o2 = document.createElement('option');
+        o1.value = o1.text = a;
+        o2.value = o2.text = a;
+        anoIniSel.appendChild(o1);
+        anoFimSel.appendChild(o2);
+      });
+    }
+
+    marcaSel.addEventListener('change', atualizarModelos);
+    modeloSel.addEventListener('change', atualizarAnos);
+    atualizarModelos();           // inicializa selects
+
+    // Botão Buscar
+    btnBusca.onclick = () => {
+      const p = [];
+      if (marcaSel.value)  p.push('marca='  + encodeURIComponent(marcaSel.value));
+      if (modeloSel.value) p.push('modelo=' + encodeURIComponent(modeloSel.value));
+      if (anoIniSel.value) p.push('menor='  + encodeURIComponent(anoIniSel.value));
+      if (anoFimSel.value) p.push('maior='  + encodeURIComponent(anoFimSel.value));
+
+      window.location.href = p.length ? `motos.html?${p.join('&')}` : 'motos.html';
+    };
+
+    /* ---------- CARDS “MOTOS EM DESTAQUE” ---------- */
+    // ids que você já usa
+    const idsDestaque = [10,1,2,3,4,5,6,7,8,9,11,12];
+    const motoList = document.getElementById('motoList');
+
+    idsDestaque.forEach(id => {
+      const m = window.motosData.find(x => x.id === id);
+      if (!m) return;
+
+      const card = document.createElement('div');
+      card.className = 'moto-card';
+
+      const imgPrin = m.imagens?.[0] || 'placeholder.jpg';
+      card.innerHTML = `
+        <div class="card-media">
+          <img src="images/${imgPrin}" alt="${m.marca} ${m.nome}">
+        </div>
+        <div class="card-body">
+          <div class="card-content">
+            <p class="subtitulo">${m.categoria} • USADO • ${m.ano}/${m.ano}</p>
+            <h3>${m.marca} ${m.nome}</h3>
+            <p class="preco">R$ ${m.preco.toLocaleString('pt-BR')}</p>
+            <div class="info-icons">
+              <div class="item"><i class="fas fa-calendar"></i><span>${m.ano}</span></div>
+              <div class="item"><i class="fas fa-palette"></i><span>${m.cor}</span></div>
+              <div class="item"><i class="fas fa-motorcycle"></i><span>${m.categoria}</span></div>
+              <div class="item"><i class="fas fa-tachometer-alt"></i><span>${m.quilometragem.toLocaleString()} km</span></div>
+              <div class="item"><i class="fas fa-gas-pump"></i><span>${m.combustivel}</span></div>
+              <div class="item"><i class="fas fa-cogs"></i><span>${m.cilindrada}</span></div>
+            </div>
+          </div>
+          <a href="detalhes.html?id=${m.id}" class="btn-detalhes">Mais Detalhes</a>
+        </div>`;
+      motoList.appendChild(card);
+    });
+  });
+  </script>
+
+</body>
+</html>

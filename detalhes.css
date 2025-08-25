@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/* ==========================================================================
+
+CSS ESPECÍFICO PARA PÁGINA DE DETALHES - DETALHES.CSS
+
+========================================================================== */
+
+/* ==========================================================================
+
+Variáveis CSS - Sincronizadas com style.css
+
+========================================================================== */
+
+:root {
+--primary-color: #00aaff;
+--dark-color: #111;
+--dark-bg: #000;
+--light-bg: #f5f5f5;
+--text-light: #fff;
+--text-muted: #555;
+--shadow-standard: 0 2px 6px rgba(0, 0, 0, 0.08);
+--border-color: #ddd;
+--card-bg: #fff;
+}
+
+/* ==========================================================================
+
+Breadcrumb
+
+========================================================================== */
+
+.breadcrumb {
+background: var(--light-bg);
+padding: 12px 0;
+font-size: 14px;
+border-bottom: 1px solid var(--border-color);
+font-family: 'Oxanium', sans-serif;
+}
+
+.breadcrumb a {
+color: var(--text-muted);
+text-decoration: none;
+transition: color 0.25s ease;
+}
+
+.breadcrumb a:hover {
+color: var(--primary-color);
+}
+
+.breadcrumb .separator {
+margin: 0 8px;
+color: var(--text-muted);
+}
+
+/* ==========================================================================
+
+Container Principal
+
+========================================================================== */
+
+.detalhes-main {
+background: var(--card-bg);
+padding: 20px 0 32px;
+}
+
+.container {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* ==========================================================================
+
+Layout Grid Principal
+
+========================================================================== */
+
+.detalhes-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 32px;
+margin: 24px 0;
+align-items: start;
+}
+
+/* ==========================================================================
+
+Galeria de Imagens
+
+========================================================================== */
+
+.galeria-container {
+position: sticky;
+top: 20px;
+height: fit-content;
+}
+
+.galeria-principal {
+position: relative;
+background: var(--light-bg);
+border-radius: 8px;
+overflow: hidden;
+margin-bottom: 12px;
+box-shadow: var(--shadow-standard);
+border: 1px solid var(--border-color);
+}
+
+.galeria-principal img {
+width: 100%;
+height: 400px;
+object-fit: cover;
+display: block;
+}
+
+.nav-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0, 0, 0, 0.7);
+color: var(--text-light);
+border: none;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: all 0.3s ease;
+z-index: 10;
+font-family: 'Oxanium', sans-serif;
+}
+
+.nav-btn:hover {
+background: rgba(0, 0, 0, 0.9);
+transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+left: 16px;
+}
+
+.next-btn {
+right: 16px;
+}
+
+/* ==========================================================================
+
+Miniaturas - ADAPTATIVAS AO NÚMERO DE FOTOS
+
+========================================================================== */
+
+.miniaturas {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+gap: 8px;
+max-width: 100%;
+margin: 0;
+}
+
+/* Limite máximo de 5 colunas */
+.miniaturas {
+grid-template-columns: repeat(auto-fit, minmax(60px, calc((100% - 32px) / 5)));
+}
+
+/* Oculta miniaturas além das primeiras 5 */
+.miniatura:nth-child(n+6) {
+display: none;
+}
+
+.miniatura {
+background: var(--light-bg);
+border-radius: 8px;
+overflow: hidden;
+cursor: pointer;
+transition: all 0.3s ease;
+border: 2px solid transparent;
+aspect-ratio: 1;
+}
+
+.miniatura.active {
+border-color: var(--primary-color);
+box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+}
+
+.miniatura:hover {
+transform: translateY(-2px);
+box-shadow: var(--shadow-standard);
+}
+
+.miniatura img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* ==========================================================================
+
+Informações da Moto
+
+========================================================================== */
+
+.info-container {
+padding: 0 20px;
+}
+
+.moto-header {
+margin-bottom: 20px;
+}
+
+.categoria-ano {
+font-size: 12px;
+color: var(--text-muted);
+text-transform: uppercase;
+letter-spacing: 0.8px;
+margin-bottom: 8px;
+font-family: 'Oxanium', sans-serif;
+font-weight: 600;
+}
+
+/* ==========================================================================
+
+NOME DA MOTO COM MARCA INLINE - MESMA COR
+
+========================================================================== */
+
+.moto-header h1 {
+font-size: 32px;
+font-weight: 800;
+color: var(--dark-color);
+margin: 0 0 16px 0;
+font-family: 'Oxanium', sans-serif;
+line-height: 1.2;
+letter-spacing: 0.6px;
+}
+
+.moto-header h1 .marca {
+    font-weight: 800;
+    color: var(--dark-color);
+    /* Remove o margin e deixa apenas o espaço natural */
+}
+
+
+
+.preco-principal {
+font-size: 36px;
+font-weight: 800;
+color: var(--primary-color);
+font-family: 'Oxanium', sans-serif;
+margin-bottom: 20px;
+}
+
+/* ==========================================================================
+
+Badges
+
+========================================================================== */
+
+.badges-container {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 24px;
+}
+
+.badge {
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: 800;
+text-transform: uppercase;
+letter-spacing: 0.3px;
+font-family: 'Oxanium', sans-serif;
+}
+
+.badge-positive {
+background: rgba(0, 170, 255, 0.1);
+color: var(--primary-color);
+border: 1px solid rgba(0, 170, 255, 0.25);
+}
+
+/* ==========================================================================
+
+Informações Rápidas
+
+========================================================================== */
+
+.info-rapida {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 16px;
+margin-bottom: 24px;
+padding: 20px;
+background: var(--light-bg);
+border-radius: 8px;
+border: 1px solid var(--border-color);
+box-shadow: var(--shadow-standard);
+}
+
+.info-item {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.info-item i {
+font-size: 18px;
+color: var(--primary-color);
+width: 24px;
+text-align: center;
+}
+
+.info-item .label {
+display: block;
+font-size: 11px;
+color: var(--text-muted);
+font-weight: 600;
+font-family: 'Oxanium', sans-serif;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.info-item .valor {
+display: block;
+font-size: 14px;
+color: var(--dark-color);
+font-weight: 800;
+font-family: 'Oxanium', sans-serif;
+}
+
+/* ==========================================================================
+
+Ações
+
+========================================================================== */
+
+.acoes-container {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.btn {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 12px 20px;
+border: none;
+border-radius: 8px;
+font-size: 14px;
+font-weight: 800;
+font-family: 'Oxanium', sans-serif;
+cursor: pointer;
+transition: all 0.3s ease;
+text-decoration: none;
+text-align: center;
+letter-spacing: 0.3px;
+}
+
+.btn-whatsapp {
+background: #25d366;
+color: var(--text-light);
+}
+
+.btn-whatsapp:hover {
+background: #128c7e;
+transform: translateY(-2px);
+}
+
+.btn-financiar {
+background: var(--primary-color);
+color: var(--text-light);
+}
+
+.btn-financiar:hover {
+background: #0088cc;
+transform: translateY(-2px);
+}
+
+.btn-compartilhar {
+background: var(--light-bg);
+color: var(--dark-color);
+border: 1px solid var(--border-color);
+}
+
+.btn-compartilhar:hover {
+background: #e5e5e5;
+transform: translateY(-2px);
+}
+
+/* ==========================================================================
+
+Seções Extras
+
+========================================================================== */
+
+.detalhes-extras {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 24px;
+margin: 32px 0;
+padding-top: 24px;
+border-top: 1px solid var(--border-color);
+}
+
+.descricao-container h3,
+.specs-container h3 {
+font-size: 20px;
+font-weight: 800;
+color: var(--dark-color);
+margin-bottom: 16px;
+font-family: 'Oxanium', sans-serif;
+letter-spacing: 0.3px;
+}
+
+.descricao-container p {
+color: var(--text-muted);
+line-height: 1.6;
+font-family: 'Oxanium', sans-serif;
+font-size: 16px;
+}
+
+/* ==========================================================================
+
+Especificações
+
+========================================================================== */
+
+.specs-grid {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.spec-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px solid #eee;
+}
+
+.spec-item:last-child {
+border-bottom: none;
+}
+
+.spec-label {
+font-size: 14px;
+color: var(--text-muted);
+font-weight: 600;
+font-family: 'Oxanium', sans-serif;
+}
+
+.spec-value {
+font-size: 14px;
+color: var(--dark-color);
+font-weight: 800;
+font-family: 'Oxanium', sans-serif;
+}
+
+/* ==========================================================================
+
+Motos Relacionadas
+
+========================================================================== */
+
+.relacionadas-container {
+margin: 32px 0;
+padding-top: 24px;
+border-top: 1px solid var(--border-color);
+background: var(--card-bg);
+}
+
+.relacionadas-container h3 {
+font-size: 28px;
+font-weight: 800;
+color: var(--dark-color);
+margin-bottom: 24px;
+font-family: 'Oxanium', sans-serif;
+text-align: center;
+letter-spacing: 0.6px;
+}
+
+.relacionadas-container .motos {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+background: var(--card-bg);
+}
+
+/* ==========================================================================
+
+Cards de Motos Relacionadas - Padronizado com style.css
+
+========================================================================== */
+
+.relacionadas-container .moto-card {
+border: 1px solid var(--border-color);
+border-radius: 8px;
+background: var(--card-bg);
+overflow: hidden;
+box-shadow: var(--shadow-standard);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+display: flex;
+flex-direction: column;
+height: auto;
+min-height: 480px;
+}
+
+.relacionadas-container .moto-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.relacionadas-container .moto-card .card-media {
+width: 100%;
+height: 180px;
+overflow: hidden;
+background: var(--light-bg);
+}
+
+.relacionadas-container .moto-card .card-media img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+display: block;
+}
+
+.relacionadas-container .moto-card .card-body {
+padding: 15px;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+text-align: center;
+}
+
+.relacionadas-container .moto-card .card-content {
+flex: 1;
+}
+
+.relacionadas-container .moto-card .subtitulo {
+margin: 0 0 8px 0;
+font-weight: normal;
+color: var(--text-muted);
+font-size: 12px;
+font-family: 'Oxanium', sans-serif;
+}
+
+.relacionadas-container .moto-card .modelo {
+margin: 0 0 8px 0;
+font-weight: 800;
+font-size: 16px;
+font-family: 'Oxanium', sans-serif;
+color: var(--dark-color);
+text-transform: uppercase;
+}
+
+.relacionadas-container .moto-card .preco {
+margin: 0 0 12px 0;
+font-size: 20px;
+font-weight: 800;
+color: var(--dark-color);
+font-family: 'Oxanium', sans-serif;
+}
+
+/* Ajuste para 6 ícones nas motos relacionadas */
+.relacionadas-container .moto-card .info-icons {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 6px;
+margin: 0 0 15px 0;
+}
+
+/* Ajuste para 6 ícones nas motos relacionadas */
+.relacionadas-container .moto-card .info-icons .item {
+height: 55px !important;
+padding: 8px 6px !important;
+}
+
+.relacionadas-container .moto-card .info-icons .item i {
+font-size: 16px !important;
+margin-bottom: 3px !important;
+}
+
+.relacionadas-container .moto-card .info-icons .item span {
+font-size: 10px !important;
+}
+
+.relacionadas-container .moto-card .btn-detalhes {
+display: block;
+width: 100%;
+text-align: center;
+background: var(--dark-bg);
+color: var(--text-light);
+text-decoration: none;
+font-weight: 800;
+padding: 12px 10px;
+border-radius: 6px;
+transition: filter 0.2s ease;
+font-family: 'Oxanium', sans-serif;
+margin-top: auto;
+font-size: 14px;
+letter-spacing: 0.3px;
+}
+
+.relacionadas-container .moto-card .btn-detalhes:hover {
+filter: brightness(1.1);
+}
+
+/* ==========================================================================
+
+Responsividade
+
+========================================================================== */
+
+@media (max-width: 1024px) {
+.detalhes-grid {
+grid-template-columns: 1fr;
+gap: 24px;
+}
+
+.galeria-container {
+position: relative;
+}
+
+.detalhes-extras {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+}
+
+@media (max-width: 768px) {
+.container {
+padding: 0 16px;
+}
+
+.detalhes-grid {
+gap: 20px;
+margin: 16px 0;
+}
+
+.galeria-principal {
+margin-bottom: 10px;
+}
+
+.galeria-principal img {
+height: 300px;
+}
+
+.info-container {
+padding: 0;
+}
+
+.moto-header h1 {
+font-size: 24px;
+}
+
+.preco-principal {
+font-size: 28px;
+}
+
+.info-rapida {
+grid-template-columns: 1fr;
+padding: 16px;
+}
+
+.relacionadas-container .motos {
+grid-template-columns: repeat(2, 1fr);
+}
+
+/* Ajuste responsivo das miniaturas */
+.miniaturas {
+grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+gap: 6px;
+}
+}
+
+@media (max-width: 480px) {
+.container {
+padding: 0 12px;
+}
+
+.detalhes-main {
+padding: 16px 0 24px;
+}
+
+.detalhes-grid {
+gap: 16px;
+margin: 12px 0;
+}
+
+.galeria-principal {
+margin-bottom: 8px;
+}
+
+.moto-header h1 {
+font-size: 20px;
+}
+
+.preco-principal {
+font-size: 24px;
+}
+
+.info-rapida {
+padding: 12px;
+gap: 12px;
+}
+
+.acoes-container {
+gap: 8px;
+}
+
+.btn {
+padding: 10px 16px;
+font-size: 12px;
+}
+
+.miniaturas {
+grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+gap: 4px;
+margin: 0;
+}
+
+.nav-btn {
+width: 35px;
+height: 35px;
+}
+
+.prev-btn {
+left: 12px;
+}
+
+.next-btn {
+right: 12px;
+}
+
+.relacionadas-container .motos {
+grid-template-columns: 1fr;
+}
+
+.relacionadas-container .moto-card {
+min-height: 400px;
+}
+
+.relacionadas-container .moto-card .card-body {
+padding: 12px;
+}
+
+.detalhes-extras {
+gap: 16px;
+margin: 24px 0;
+padding-top: 16px;
+}
+
+.descricao-container h3,
+.specs-container h3 {
+font-size: 18px;
+margin-bottom: 12px;
+}
+
+.spec-item {
+padding: 8px 0;
+}
+
+.relacionadas-container {
+margin: 24px 0;
+padding-top: 16px;
+}
+
+.relacionadas-container h3 {
+font-size: 24px;
+margin-bottom: 16px;
+}
+}
+
+/* 1. Elimina scroll horizontal */
+html, body {
+overflow-x: hidden;
+}
+
+/* 2. Header em mobile */
+@media (max-width: 768px) {
+header { flex-direction: column; }
+.top-bar { flex-direction: column; gap: 12px; }
+}
+
+/* 3. Cards responsivos */
+@media (max-width: 768px) {
+.motos { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+.motos { grid-template-columns: repeat(2,1fr); }
+}
+
+/* 4. Texto e botões legíveis no iOS (evita zoom) */
+html { font-size: 16px; }
