@@ -125,11 +125,27 @@ header {
 .menu ul {
   list-style: none;
   margin: 0;
-  padding: 0 18px;
+  padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly; /* Distribui os itens de forma igual */
   gap: 34px;
+  width: 100%;
 }
+
+.menu ul li {
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .menu ul {
+    flex-direction: column;  /* Torna os itens verticais quando a tela for pequena */
+    align-items: center;
+    padding: 0;
+    gap: 15px;
+  }
+}
+
 
 .menu a {
   color: var(--text-light);
@@ -281,13 +297,25 @@ header {
    ========================================================================== */
 .motos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Flexível, mas limita o mínimo */
   gap: 20px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   align-items: stretch;
 }
+
+.moto-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Garante que todos os cards fiquem com a mesma altura */
+  min-height: 400px; /* Altura mínima para os cards */
+}
+
+.moto-card .card-media {
+  height: 200px; /* Garantir uma altura uniforme para a imagem */
+}
+
 
 .moto-card {
   border: 1px solid #ddd;
@@ -1007,19 +1035,20 @@ header {
 
 @media (max-width: 768px) {
   .motos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 15px;
+    grid-template-columns: repeat(2, 1fr); /* Cards de 2 colunas em telas pequenas */
+    gap: 12px;
+    padding: 12px;
   }
   
   .moto-card {
-    min-height: 420px;
+    min-height: 400px; /* Garante que todos os cards tenham a mesma altura */
   }
   
   .moto-card .card-media {
-    height: 160px;
+    height: 140px; /* Ajuste a altura da imagem para melhor visualização */
   }
 }
+
 
 @media (max-width: 560px) {
   .motos {
