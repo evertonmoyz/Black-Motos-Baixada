@@ -733,7 +733,7 @@ body { overscroll-behavior-y: contain; }
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 10px !important;
-  padding: 0 px !important;
+  padding: 0 !important;
   max-width: 1000px !important;
   margin: 0 auto !important;
 }
@@ -892,19 +892,26 @@ body { overscroll-behavior-y: contain; }
     padding: 12px 10px !important; 
     min-height: 44px !important;
   }
-  /* --- FIX: 1 card por linha no celular (retrato e paisagem) --- */
-  @media (max-width: 900px) {
-    #motoList.home-cards,
-    .motos.home-cards {
-      grid-template-columns: 1fr !important;
-      max-width: none !important; /* evita “apertar” o grid */
-    }
-  }
-
-  /* Opcional: em telas bem pequenas, garante 1fr também */
-  @media (max-width: 768px) {
-    .motos { grid-template-columns: 1fr !important; }
-  }
 
 }
 
+/* ===== FIX DEFINITIVO: 1 card por linha no celular (retrato e paisagem) ===== */
+@media (max-width: 900px) {
+  #motoList.home-cards,
+  .motos.home-cards,
+  #destaques .motos {
+    grid-template-columns: 1fr !important;
+    max-width: none !important;
+    padding: 16px !important;
+  }
+}
+
+/* Garantia extra para telas bem pequenas */
+@media (max-width: 560px) {
+  .motos,
+  #motoList,
+  .motos.home-cards,
+  #motoList.home-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
