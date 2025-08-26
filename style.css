@@ -969,57 +969,53 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* === CONTATO — Botão sempre abaixo (desktop e mobile) e estático === */
-.contato-box {
-  /* largura fluida e card alto automático */
+/* === CONTATO — botão sempre abaixo (index + contato) e sem slide === */
+.contato .contato-box {
   width: 100% !important;
-  max-width: 720px;
+  max-width: 820px !important;     /* largura confortável; ajuste se quiser */
   height: auto !important;
-  margin: 0 auto;
-  padding: 18px;
-  border-radius: 12px;
+  margin: 0 auto 16px !important;
+  padding: 18px !important;
 
-  /* layout em 2 colunas: ícone | texto (botão abaixo) */
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  column-gap: 16px;
-  row-gap: 10px;
-  align-items: center;
+  display: flex !important;
+  flex-direction: column !important; /* botão vai sempre para baixo */
+  align-items: stretch !important;
+  gap: 12px !important;
 }
 
-.contato-box i {
-  font-size: 28px;
-  margin: 0;
-  justify-self: center;
+.contato .contato-box i {
+  font-size: 28px !important;
+  margin: 0 !important;
+  align-self: center !important;     /* ícone centralizado */
 }
 
-.contato-box h4,
-.contato-box p {
-  margin: 0;
-  text-align: left;
-  overflow-wrap: anywhere;
+/* texto sem cortes */
+.contato .contato-box h4,
+.contato .contato-box p {
+  margin: 0 !important;
+  text-align: left !important;
+  overflow-wrap: anywhere !important;
 }
 
-/* Botão ocupa a linha inteira, sempre visível */
-.contato-btn {
-  grid-column: 1 / -1;
-  position: static !important;   /* cancela o absolute */
-  bottom: auto !important;       /* cancela animação de slide */
+/* BOTÃO: 100% da largura e estático */
+.contato .contato-btn {
+  grid-column: 1 / -1;              /* ok mesmo sem grid */
+  position: static !important;      /* cancela absolute */
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
   width: 100% !important;
-  padding: 12px 10px;
-  border-radius: 10px;
-  font-weight: 800;
-  transition: none !important;   /* remove transição do slide */
+  display: block !important;
+  padding: 14px 12px !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  transition: none !important;      /* remove animação do slide */
 }
 
-/* neutraliza regra antiga de hover */
-.contato-box:hover .contato-btn { bottom: auto !important; }
+/* neutraliza regra antiga de hover que puxava o botão pra cima */
+.contato .contato-box:hover .contato-btn { bottom: auto !important; }
 
-/* Mobile: pequenos ajustes de escala */
 @media (max-width: 480px) {
-  .contato-box {
-    grid-template-columns: 44px 1fr;
-    padding: 14px;
-  }
-  .contato-btn { font-size: 14px; }
+  .contato .contato-box { padding: 14px !important; }
+  .contato .contato-btn { min-height: 44px !important; font-size: 14px !important; }
 }
