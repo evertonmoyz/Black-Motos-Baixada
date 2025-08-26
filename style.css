@@ -894,75 +894,31 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* ==== FIX: cards ocupam 100% da largura no mobile ==== */
-@media (max-width: 900px) {
-  #motoList.home-cards,
-  .motos.home-cards,
-  #destaques .motos {
-    grid-template-columns: 1fr !important;
-    max-width: none !important;
-    padding: 16px !important;
-  }
-
-  #motoList.home-cards .moto-card,
-  .motos.home-cards .moto-card,
-  #destaques .motos .moto-card {
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-}
-
-@media (max-width: 560px) {
-  .motos,
-  #motoList,
-  .motos.home-cards,
-  #motoList.home-cards {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-
-/* ==== FIX: cards em motos.html ocupam 100% no mobile ==== */
-@media (max-width: 900px) {
-  .motos .moto-card {
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-}
-
-@media (max-width: 560px) {
-  .motos {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* ==== FIX: Barra do catálogo responsiva e simétrica ==== */
+/* ==== FIX: Barra do catálogo responsiva e simétrica (motos.html) ==== */
 @media (max-width: 768px) {
   .catalog-toolbar {
-    max-width: 100% !important;   /* ocupa só a largura da tela */
-    margin: 15px auto !important; /* centralizada */
-    padding: 10px !important;     /* menos espaçamento lateral */
-    border-radius: 8px;           /* mantém visual suave */
+    max-width: 100% !important;
+    margin: 15px auto !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
   }
 
   .toolbar-left {
-    flex-direction: column;       /* quebra em 2 linhas */
-    align-items: center;
-    text-align: center;
-    gap: 8px;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
   }
 
   .toolbar-right {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
   }
 
   .toolbar-right select,
   .toolbar-right button {
-    width: 100%;                  /* cada item ocupa linha inteira */
-    max-width: 250px;
+    width: 100% !important;
+    max-width: 260px !important;
   }
 }
