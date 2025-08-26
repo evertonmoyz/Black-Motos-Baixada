@@ -993,3 +993,22 @@ body { overscroll-behavior-y: contain; }
   }
   .contato .contato-box:hover .contato-btn{ bottom:auto !important; }
 }
+
+/* ==== DETALHE: mais espaço acima do texto no MOBILE ==== */
+@media (max-width: 768px) {
+  /* aumenta o vão entre galeria (miniaturas) e o bloco de informações */
+  .detalhes-grid { row-gap: 28px !important; }
+
+  /* empurra levemente o cabeçalho de texto para baixo */
+  .info-container { margin-top: 8px !important; }
+
+  /* dá margem específica no primeiro texto (categoria/ano) */
+  .moto-header { margin-top: 6px !important; }
+  .categoria-ano { margin-top: 8px !important; display: block; }
+}
+
+/* Se ainda parecer colado em telas bem pequenas, use este ajuste extra */
+@media (max-width: 480px) {
+  .detalhes-grid { row-gap: 32px !important; }
+  .categoria-ano { margin-top: 10px !important; }
+}
