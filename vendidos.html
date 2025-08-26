@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>BlackMotos Baixada - Veículos Vendidos</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Black Motos Baixada">
+        </a>
+      </div>
+
+      <div class="top-search">
+        <input type="text" id="searchInput" placeholder="Pesquisar motos...">
+        <i class="fas fa-search search-icon" id="searchBtn" role="button" aria-label="Buscar" tabindex="0"></i>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61579420846030" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/blackmotosbaixada/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/5513997730431" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+5513997730431" aria-label="Ligar">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav class="menu" role="navigation">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="motos.html">Motos</a></li>
+        <li><a href="financiamento.html">Financiamento</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="vendidos-page">
+
+    <section class="intro-vendidos">
+      <h2>Confira nossos últimos veículos vendidos!</h2>
+      <p>Confira abaixo os últimos veículos que a Black Motos Baixada vendeu. Conquiste o seu sonho também!</p>
+    </section>
+
+<!-- BARRA DE CONTROLES (padrão motos) -->
+<div class="catalog-toolbar">
+  <div class="toolbar-left">
+    <span class="results-text-v2">Exibindo resultado da pesquisa em todo nosso estoque.</span>
+
+    <div class="toolbar-views">
+      <button id="gridViewBtn" title="Visualização em grade">
+        <i class="fa-solid fa-grip"></i>
+      </button>
+      <button id="listViewBtn" title="Visualização em lista">
+        <i class="fa-solid fa-list"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="toolbar-right">
+    <select id="itemsPerPageSelect" aria-label="Itens por página">
+      <option value="12">12 por página</option>
+      <option value="24">24 por página</option>
+      <option value="48">48 por página</option>
+    </select>
+
+    <button id="prevPageBtn" disabled>← Página anterior</button>
+    <button id="nextPageBtn">Próxima página →</button>
+  </div>
+</div>
+
+    <!-- GRID DE VENDIDOS -->
+    <div class="motos grid" id="vendidosList">
+
+      <!-- CARD 1 -->
+      <div class="moto-card-vendido sold">
+        <span class="sold-ribbon">Vendido</span>
+
+        <div class="card-media">
+          <img src="images/MT07.jpg" alt="Yamaha XMAX 250 ABS 2021">
+        </div>
+
+        <div class="card-body">
+          <div class="card-content">
+            <p class="subtitulo">SCOOTER • USADO • 2021/2021</p>
+            <h3>YAMAHA XMAX 250 ABS</h3>
+
+            <div class="info-icons-vendido">
+              <div class="icon-item"><i class="fas fa-calendar"></i><span>2021</span></div>
+              <div class="icon-item"><i class="fas fa-palette"></i><span>Azul</span></div>
+              <div class="icon-item"><i class="fas fa-motorcycle"></i><span>Scooter</span></div>
+              <div class="icon-item"><i class="fas fa-tachometer-alt"></i><span>23.905 km</span></div>
+              <div class="icon-item"><i class="fas fa-gas-pump"></i><span>Gasolina</span></div>
+              <div class="icon-item"><i class="fas fa-cogs"></i><span>250 cc</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="moto-card-vendido sold">
+        <span class="sold-ribbon">Vendido</span>
+
+        <div class="card-media">
+          <img src="images/MT07.jpg" alt="Yamaha XMAX 250 ABS 2022">
+        </div>
+
+        <div class="card-body">
+          <div class="card-content">
+            <p class="subtitulo">SCOOTER • USADO • 2022/2022</p>
+            <h3>YAMAHA NMAX 160 ABS</h3>
+
+            <div class="info-icons-vendido">
+              <div class="icon-item"><i class="fas fa-calendar"></i><span>2022</span></div>
+              <div class="icon-item"><i class="fas fa-palette"></i><span>Prata</span></div>
+              <div class="icon-item"><i class="fas fa-motorcycle"></i><span>Scooter</span></div>
+              <div class="icon-item"><i class="fas fa-tachometer-alt"></i><span>11.591 km</span></div>
+              <div class="icon-item"><i class="fas fa-gas-pump"></i><span>Gasolina</span></div>
+              <div class="icon-item"><i class="fas fa-cogs"></i><span>160 cc</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- CARD 3 -->
+      <div class="moto-card-vendido sold">
+        <span class="sold-ribbon">Vendido</span>
+
+        <div class="card-media">
+          <img src="images/MT07.jpg" alt="Yamaha XMAX 250 ABS 2021">
+        </div>
+
+        <div class="card-body">
+          <div class="card-content">
+            <p class="subtitulo">NAKED • USADO • 2021/2021</p>
+            <h3>YAMAHA MT-03 ABS</h3>
+
+            <div class="info-icons-vendido">
+              <div class="icon-item"><i class="fas fa-calendar"></i><span>2024</span></div>
+              <div class="icon-item"><i class="fas fa-palette"></i><span>Preta</span></div>
+              <div class="icon-item"><i class="fas fa-motorcycle"></i><span>NAKED</span></div>
+              <div class="icon-item"><i class="fas fa-tachometer-alt"></i><span>3.905 km</span></div>
+              <div class="icon-item"><i class="fas fa-gas-pump"></i><span>Gasolina</span></div>
+              <div class="icon-item"><i class="fas fa-cogs"></i><span>321 cc</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="site-map">
+        <h4>Mapa do site</h4>
+        <ul>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="localizacao.html">Localização</a></li>
+          <li><a href="motos.html">Motos</a></li>
+          <li><a href="financiamento.html">Financiamento</a></li>
+          <li><a href="vendidos.html">Veículos Vendidos</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          <li><a href="politica.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-text">
+        <p>Encontre sua motocicleta ou veículo usada (seminova) ou nova em Santos, São Paulo - Black Motos Baixada. Encontre diversos modelos de motos e veículos novos e seminovos (usados) através do Site da Black Motos Baixada em Santos. Nosso estoque de motocicletas e veículos oferece vários modelos semi-novos (usados) e novos de diversas marcas e ainda oferecemos as melhores formas de pagamento e financiamento; encontre tudo isto na Black Motos Baixada em Santos. Aqui na Black Motos Baixada você encontra a melhor oferta para a moto ou veículo que você procura e tem acesso as melhores formas de pagamento e as melhores formas de financiamento. Aqui na Black Motos Baixada você pode financiar, avaliar ou comprar sua moto ou automóvel novo ou usado (semi novo); confira já nossas melhores ofertas. Faça uma busca para garantir a sua moto ou seu carro semi-novo (usado) ou novo agora mesmo. Tenha a sua moto ou carro novo ou usado (seminovo) com as melhores condições de pagamento ou financiamento. Confira nosso estoque de motos e as melhores ofertas para que você faça sempre um ótimo negócio. Aqui você tem a melhor oferta para moto usada (seminova) ou nova. Entre em contato conosco e realize seu sonho! Na Black Motos Baixada você encontra as melhores marcas e melhores modelos, entre em contato com nossos vendedores! Motocicletas e veículos novos ou semi-novos (usados) na Black Motos Baixada em Santos, São Paulo.</p>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <p>© 2025 - Todos os direitos reservados.</p>
+      <p>Desenvolvido por <strong>Everton Moy</strong></p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5513997730431"
+     class="whatsapp-float" target="_blank" rel="noopener"
+     aria-label="Fale conosco no WhatsApp">
+     <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+  <script src="vendidos.js"></script>
+
+</body>
+</html>
