@@ -937,3 +937,32 @@ body { overscroll-behavior-y: contain; }
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==== FIX: Barra do catálogo responsiva e simétrica ==== */
+@media (max-width: 768px) {
+  .catalog-toolbar {
+    max-width: 100% !important;   /* ocupa só a largura da tela */
+    margin: 15px auto !important; /* centralizada */
+    padding: 10px !important;     /* menos espaçamento lateral */
+    border-radius: 8px;           /* mantém visual suave */
+  }
+
+  .toolbar-left {
+    flex-direction: column;       /* quebra em 2 linhas */
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .toolbar-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .toolbar-right select,
+  .toolbar-right button {
+    width: 100%;                  /* cada item ocupa linha inteira */
+    max-width: 250px;
+  }
+}
