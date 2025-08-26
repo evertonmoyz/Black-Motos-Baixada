@@ -925,7 +925,7 @@ body { overscroll-behavior-y: contain; }
 
 /* ==== FIX: cards em motos.html ocupam 100% no mobile ==== */
 @media (max-width: 900px) {
-  .motos .moto-card {
+  #motoList .moto-card {
     max-width: none !important;
     width: 100% !important;
     margin: 0 auto !important;
@@ -933,10 +933,12 @@ body { overscroll-behavior-y: contain; }
 }
 
 @media (max-width: 560px) {
-  .motos {
+  #motoList {
     grid-template-columns: 1fr !important;
+    padding: 16px !important;
   }
 }
+
 
 /* ==== FIX: Barra do catálogo responsiva e simétrica ==== */
 @media (max-width: 768px) {
