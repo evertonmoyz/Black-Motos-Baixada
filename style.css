@@ -892,4 +892,19 @@ body { overscroll-behavior-y: contain; }
     padding: 12px 10px !important; 
     min-height: 44px !important;
   }
+
+}
+
+/* --- FIX: 1 card por linha no celular (retrato e paisagem) --- */
+@media (max-width: 900px) {
+  #motoList.home-cards,
+  .motos.home-cards {
+    grid-template-columns: 1fr !important;
+    max-width: none !important; /* evita “apertar” o grid */
+  }
+}
+
+/* Opcional: em telas bem pequenas, garante 1fr também */
+@media (max-width: 768px) {
+  .motos { grid-template-columns: 1fr !important; }
 }
