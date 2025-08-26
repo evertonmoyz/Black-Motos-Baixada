@@ -968,3 +968,58 @@ body { overscroll-behavior-y: contain; }
     max-width: 250px;
   }
 }
+
+/* === CONTATO — Botão sempre abaixo (desktop e mobile) e estático === */
+.contato-box {
+  /* largura fluida e card alto automático */
+  width: 100% !important;
+  max-width: 720px;
+  height: auto !important;
+  margin: 0 auto;
+  padding: 18px;
+  border-radius: 12px;
+
+  /* layout em 2 colunas: ícone | texto (botão abaixo) */
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  column-gap: 16px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.contato-box i {
+  font-size: 28px;
+  margin: 0;
+  justify-self: center;
+}
+
+.contato-box h4,
+.contato-box p {
+  margin: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+/* Botão ocupa a linha inteira, sempre visível */
+.contato-btn {
+  grid-column: 1 / -1;
+  position: static !important;   /* cancela o absolute */
+  bottom: auto !important;       /* cancela animação de slide */
+  width: 100% !important;
+  padding: 12px 10px;
+  border-radius: 10px;
+  font-weight: 800;
+  transition: none !important;   /* remove transição do slide */
+}
+
+/* neutraliza regra antiga de hover */
+.contato-box:hover .contato-btn { bottom: auto !important; }
+
+/* Mobile: pequenos ajustes de escala */
+@media (max-width: 480px) {
+  .contato-box {
+    grid-template-columns: 44px 1fr;
+    padding: 14px;
+  }
+  .contato-btn { font-size: 14px; }
+}
