@@ -969,53 +969,27 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* === CONTATO — botão sempre abaixo (index + contato) e sem slide === */
-.contato .contato-box {
-  width: 100% !important;
-  max-width: 820px !important;     /* largura confortável; ajuste se quiser */
-  height: auto !important;
-  margin: 0 auto 16px !important;
-  padding: 18px !important;
-
-  display: flex !important;
-  flex-direction: column !important; /* botão vai sempre para baixo */
-  align-items: stretch !important;
-  gap: 12px !important;
-}
-
-.contato .contato-box i {
-  font-size: 28px !important;
-  margin: 0 !important;
-  align-self: center !important;     /* ícone centralizado */
-}
-
-/* texto sem cortes */
-.contato .contato-box h4,
-.contato .contato-box p {
-  margin: 0 !important;
-  text-align: left !important;
-  overflow-wrap: anywhere !important;
-}
-
-/* BOTÃO: 100% da largura e estático */
-.contato .contato-btn {
-  grid-column: 1 / -1;              /* ok mesmo sem grid */
-  position: static !important;      /* cancela absolute */
-  bottom: auto !important;
-  left: auto !important;
-  right: auto !important;
-  width: 100% !important;
-  display: block !important;
-  padding: 14px 12px !important;
-  border-radius: 10px !important;
-  font-weight: 800 !important;
-  transition: none !important;      /* remove animação do slide */
-}
-
-/* neutraliza regra antiga de hover que puxava o botão pra cima */
-.contato .contato-box:hover .contato-btn { bottom: auto !important; }
-
-@media (max-width: 480px) {
-  .contato .contato-box { padding: 14px !important; }
-  .contato .contato-btn { min-height: 44px !important; font-size: 14px !important; }
+/* CONTATO — forçar layout no mobile */
+@media (max-width: 768px) {
+  .contato .contato-box{
+    display:flex !important;
+    flex-direction: column !important;   /* botão vai pra baixo */
+    align-items:center !important;
+    text-align:center !important;
+    width:100% !important;
+    max-width:820px !important;
+    height:auto !important;
+    margin:0 auto 16px !important;
+    padding:16px !important;
+    gap:12px !important;
+  }
+  .contato .contato-btn{
+    position: static !important;         /* sem deslizar no mobile */
+    width:100% !important;
+    margin-top:6px !important;
+    border-radius:10px !important;
+    padding:14px 12px !important;
+    transition:none !important;
+  }
+  .contato .contato-box:hover .contato-btn{ bottom:auto !important; }
 }
