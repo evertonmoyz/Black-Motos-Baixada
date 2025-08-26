@@ -733,7 +733,7 @@ body { overscroll-behavior-y: contain; }
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 10px !important;
-  padding: 0 !important;
+  padding: 0 px !important;
   max-width: 1000px !important;
   margin: 0 auto !important;
 }
@@ -892,41 +892,18 @@ body { overscroll-behavior-y: contain; }
     padding: 12px 10px !important; 
     min-height: 44px !important;
   }
-
-}
-
-/* ===== FIX DEFINITIVO: 1 card por linha no celular (retrato e paisagem) ===== */
-@media (max-width: 900px) {
-  #motoList.home-cards,
-  .motos.home-cards,
-  #destaques .motos {
-    grid-template-columns: 1fr !important;
-    max-width: none !important;
-    padding: 16px !important;
-  }
-}
-
-/* Garantia extra para telas bem pequenas */
-@media (max-width: 560px) {
-  .motos,
-  #motoList,
-  .motos.home-cards,
-  #motoList.home-cards {
-    grid-template-columns: 1fr !important;
-  }
 }
 
 /* ==== FIX: cards ocupam 100% da largura no mobile ==== */
 @media (max-width: 900px) {
-  /* o grid já está 1fr; aqui liberamos a largura do card */
   #motoList.home-cards,
   .motos.home-cards,
   #destaques .motos {
+    grid-template-columns: 1fr !important;
     max-width: none !important;
     padding: 16px !important;
   }
 
-  /* remove o limite de 300px e força 100% */
   #motoList.home-cards .moto-card,
   .motos.home-cards .moto-card,
   #destaques .motos .moto-card {
@@ -934,23 +911,29 @@ body { overscroll-behavior-y: contain; }
     width: 100% !important;
     margin: 0 auto !important;
   }
-
-  /* deixa os conteúdos mais “respirados” */
-  .home-cards .card-media { aspect-ratio: 16 / 9 !important; }
-  .home-cards .card-body { padding: 16px !important; }
-  .home-cards h3 { font-size: 18px !important; }
-  .home-cards .preco { font-size: 20px !important; }
-  .home-cards .info-icons { gap: 8px !important; }
-  .home-cards .info-icons .item { height: 60px !important; padding: 8px 6px !important; }
-  .home-cards .btn-detalhes { font-size: 14px !important; min-height: 44px !important; }
 }
 
 @media (max-width: 560px) {
-  /* garantia extra para telas bem pequenas */
   .motos,
   #motoList,
   .motos.home-cards,
   #motoList.home-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ==== FIX: cards em motos.html ocupam 100% no mobile ==== */
+@media (max-width: 900px) {
+  .motos .moto-card {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .motos {
     grid-template-columns: 1fr !important;
   }
 }
