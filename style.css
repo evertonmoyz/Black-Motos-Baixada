@@ -161,14 +161,16 @@ header {
    ========================================================================== */
 
 .motos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 por linha no desktop */
-  gap: 20px;
-  width: 100%;
-  margin: 0 auto;                  /* centraliza o grid na página */
-  align-items: stretch;            /* cards com mesma altura */
-  justify-content: center;         /* centra as colunas quando sobrar espaço */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;   /* LIMITA O TAMANHO DO GRID */
+    margin: 0 auto;
+    align-items: stretch;
+    justify-content: center;
 }
+
 
 
 /* Tablets médios: 2 colunas */
@@ -756,111 +758,56 @@ body { overscroll-behavior-y: contain; }
 
 /* ==== SOBRESCRITA: Aumentar cards HOME no DESKTOP ==== */
 @media (min-width: 1025px) {
-  #motoList.home-cards,
-  .motos.home-cards,
-  #destaques .motos {
-    gap: 20px !important;        /* aumenta espaçamento entre cards */
-    max-width: 1200px !important;/* mais largura para alinhar ao restante do layout */
-    padding: 0 20px !important;  /* espaço lateral igual ao motos.html */
-  }
-
-  #motoList.home-cards .moto-card,
-  .motos.home-cards .moto-card,
-  #destaques .motos .moto-card {
-    max-width: 360px !important; /* cards maiores, como no print */
-    font-size: 14px !important;  /* texto maior */
-  }
-
-  #motoList.home-cards h3,
-  .motos.home-cards h3,
-  #destaques .motos h3 {
-    font-size: 18px !important;  /* título maior */
-  }
-
-  #motoList.home-cards .preco,
-  .motos.home-cards .preco,
-  #destaques .motos .preco {
-    font-size: 22px !important;  /* preço maior */
-  }
-
-  #motoList.home-cards .btn-detalhes,
-  .motos.home-cards .btn-detalhes,
-  #destaques .motos .btn-detalhes {
-    font-size: 14px !important;  /* botão maior */
-    padding: 12px 10px !important;
-  }
+    #motoList.home-cards .card-body,
+    .motos.home-cards .card-body,
+    #destaques .motos .card-body {
+        padding: 15px !important; /* Aumentado de 10px */
+    }
+    
+    #motoList.home-cards h3,
+    .motos.home-cards h3,
+    #destaques .motos h3 {
+        font-size: 16px !important; /* Aumentado de 13px */
+        margin-bottom: 8px !important; /* Aumentado de 5px */
+    }
+    
+    #motoList.home-cards .preco,
+    .motos.home-cards .preco,
+    #destaques .motos .preco {
+        font-size: 20px !important; /* Aumentado de 15px */
+        margin-bottom: 12px !important; /* Aumentado de 8px */
+    }
+    
+    #motoList.home-cards .info-icons .item,
+    .motos.home-cards .info-icons .item,
+    #destaques .motos .info-icons .item {
+        height: 65px !important; /* Aumentado de 42px */
+        padding: 10px 8px !important; /* Aumentado de 5px 3px */
+    }
+    
+    #motoList.home-cards .info-icons .item i,
+    .motos.home-cards .info-icons .item i,
+    #destaques .motos .info-icons .item i {
+        font-size: 18px !important; /* Aumentado de 12px */
+        margin-bottom: 4px !important; /* Aumentado de 2px */
+    }
+    
+    #motoList.home-cards .info-icons .item span,
+    .motos.home-cards .info-icons .item span,
+    #destaques .motos .info-icons .item span {
+        font-size: 11px !important; /* Aumentado de 8px */
+        line-height: 1.2 !important; /* Aumentado de 1 */
+    }
+    
+    #motoList.home-cards .btn-detalhes,
+    .motos.home-cards .btn-detalhes,
+    #destaques .motos .btn-detalhes {
+        font-size: 14px !important; /* Aumentado de 10px */
+        padding: 12px 10px !important; /* Aumentado de 8px 6px */
+        min-height: 44px !important; /* Aumentado de 32px */
+    }
 }
 
-
-#motoList.home-cards .card-media,
-.motos.home-cards .card-media,
-#destaques .motos .card-media {
-  aspect-ratio: 16 / 10 !important;
-}
-
-#motoList.home-cards .card-body,
-.motos.home-cards .card-body,
-#destaques .motos .card-body { 
-  padding: 10px !important; 
-}
-
-#motoList.home-cards h3,
-.motos.home-cards h3,
-#destaques .motos h3 { 
-  font-size: 13px !important; 
-  line-height: 1.1 !important; 
-  margin-bottom: 5px !important;
-}
-
-#motoList.home-cards .subtitulo,
-.motos.home-cards .subtitulo,
-#destaques .motos .subtitulo { 
-  font-size: 10px !important; 
-  margin-bottom: 3px !important;
-}
-
-#motoList.home-cards .preco,
-.motos.home-cards .preco,
-#destaques .motos .preco { 
-  font-size: 15px !important; 
-  margin-bottom: 8px !important;
-}
-
-#motoList.home-cards .info-icons,
-.motos.home-cards .info-icons,
-#destaques .motos .info-icons { 
-  gap: 3px !important; 
-  margin-bottom: 10px !important;
-}
-
-#motoList.home-cards .info-icons .item,
-.motos.home-cards .info-icons .item,
-#destaques .motos .info-icons .item { 
-  height: 42px !important; 
-  padding: 5px 3px !important; 
-}
-
-#motoList.home-cards .info-icons .item i,
-.motos.home-cards .info-icons .item i,
-#destaques .motos .info-icons .item i { 
-  font-size: 12px !important; 
-  margin-bottom: 2px !important;
-}
-
-#motoList.home-cards .info-icons .item span,
-.motos.home-cards .info-icons .item span,
-#destaques .motos .info-icons .item span { 
-  font-size: 8px !important; 
-  line-height: 1 !important; 
-}
-
-#motoList.home-cards .btn-detalhes,
-.motos.home-cards .btn-detalhes,
-#destaques .motos .btn-detalhes { 
-  font-size: 10px !important; 
-  padding: 8px 6px !important; 
-  min-height: 32px !important;
-}
 
 /* Tablets: 3 cards por linha */
 @media (max-width: 1200px) {
