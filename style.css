@@ -1002,3 +1002,35 @@ body { overscroll-behavior-y: contain; }
   /* se quiser ainda um toque a mais, descomente a linha abaixo */
   /* .categoria-ano { margin-top: 6px; } */
 }
+
+/* ===== FIX: Unificar tamanho dos cards da HOME com Motos no MOBILE ===== */
+@media (max-width: 768px) {
+  #motoList.home-cards .moto-card,
+  .motos.home-cards .moto-card,
+  #destaques .motos .moto-card {
+    max-width: none !important;
+    width: 100% !important;
+    font-size: inherit !important;
+  }
+  #motoList.home-cards h3,
+  .motos.home-cards h3,
+  #destaques .motos h3 {
+    font-size: 18px !important; /* mesmo tamanho de motos.html */
+  }
+  #motoList.home-cards .preco,
+  .motos.home-cards .preco,
+  #destaques .motos .preco {
+    font-size: 22px !important;
+  }
+  #motoList.home-cards .info-icons .item,
+  .motos.home-cards .info-icons .item,
+  #destaques .motos .info-icons .item {
+    height: 64px !important;
+    padding: 10px 6px !important;
+  }
+  #motoList.home-cards .info-icons .item span,
+  .motos.home-cards .info-icons .item span,
+  #destaques .motos .info-icons .item span {
+    font-size: 12px !important;
+  }
+}
