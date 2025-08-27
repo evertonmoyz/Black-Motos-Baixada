@@ -162,12 +162,14 @@ header {
 
 .motos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha no desktop */
+  grid-template-columns: repeat(3, 1fr); /* 3 por linha no desktop */
   gap: 20px;
   width: 100%;
-  padding: 0;                /* <-- era 20px, removemos para alinhar na mesma reta */
-  align-items: stretch;
+  margin: 0 auto;                  /* centraliza o grid na página */
+  align-items: stretch;            /* cards com mesma altura */
+  justify-content: center;         /* centra as colunas quando sobrar espaço */
 }
+
 
 /* Tablets médios: 2 colunas */
 @media (max-width: 1024px) {
@@ -188,7 +190,9 @@ header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 100%; /* força todos os cards a igualarem a altura */
 }
+
 .moto-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,.15); }
 
 .moto-card .card-media {
@@ -222,15 +226,41 @@ header {
 .moto-card .preco { margin: 0; font-size: 20px; font-weight: 800; color: var(--dark-bg); }
 
 .moto-card .info-icons {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 15px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 x 2 */
+  gap: 8px;
+  margin: 0 0 15px 0;
+  width: 100%;
 }
+
 .moto-card .info-icons .item {
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  background: var(--dark-bg); color: var(--text-light);
-  border-radius: 8px; padding: 10px 8px; height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 10px 8px;
+  height: 65px; /* todos iguais */
 }
-.moto-card .info-icons .item i { font-size: 18px; margin-bottom: 4px; line-height: 1; }
-.moto-card .info-icons .item span { font-size: 11px; font-weight: 600; text-align: center; line-height: 1.1; }
+
+.moto-card .info-icons .item i {
+  font-size: 18px;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.moto-card .info-icons .item span {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+  white-space: nowrap;            /* mantém uma linha */
+  overflow: hidden;
+  text-overflow: ellipsis;        /* corta sem quebrar */
+}
+
 
 .moto-card .btn-detalhes {
   display: block; width: 100%; text-align: center;
