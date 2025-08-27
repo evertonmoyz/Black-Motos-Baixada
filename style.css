@@ -1034,3 +1034,39 @@ body { overscroll-behavior-y: contain; }
     font-size: 12px !important;
   }
 }
+
+/* ==== Aumentar tamanho dos cards da HOME apenas no DESKTOP ==== */
+@media (min-width: 1025px) {
+  #motoList.home-cards .moto-card,
+  .motos.home-cards .moto-card,
+  #destaques .motos .moto-card {
+    max-width: 360px !important; /* aumenta a largura do card */
+    font-size: 14px !important;  /* aumenta a fonte */
+  }
+
+  #motoList.home-cards h3,
+  .motos.home-cards h3,
+  #destaques .motos h3 {
+    font-size: 18px !important;  /* título maior */
+  }
+
+  #motoList.home-cards .preco,
+  .motos.home-cards .preco,
+  #destaques .motos .preco {
+    font-size: 22px !important;  /* preço maior */
+  }
+
+  #motoList.home-cards .info-icons .item span,
+  .motos.home-cards .info-icons .item span,
+  #destaques .motos .info-icons .item span {
+    font-size: 12px !important; /* texto dos ícones maior */
+  }
+
+  #motoList.home-cards .btn-detalhes,
+  .motos.home-cards .btn-detalhes,
+  #destaques .motos .btn-detalhes {
+    font-size: 14px !important;  /* botão maior */
+    padding: 10px 8px !important;
+  }
+}
+
