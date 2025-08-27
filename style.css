@@ -724,27 +724,43 @@ body { overscroll-behavior-y: contain; }
 }
 
 
-/* ======== Ajuste específico: cards menores apenas na HOME (index.html) ======== */
+/* ==== SOBRESCRITA: Aumentar cards HOME no DESKTOP ==== */
+@media (min-width: 1025px) {
+  #motoList.home-cards,
+  .motos.home-cards,
+  #destaques .motos {
+    gap: 20px !important;        /* aumenta espaçamento entre cards */
+    max-width: 1200px !important;/* mais largura para alinhar ao restante do layout */
+    padding: 0 20px !important;  /* espaço lateral igual ao motos.html */
+  }
 
-/* Desktop: 3 cards por linha, muito mais compactos */
-#motoList.home-cards,
-.motos.home-cards,
-#destaques .motos {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 10px !important;
-  padding: 0 px !important;
-  max-width: 1000px !important;
-  margin: 0 auto !important;
+  #motoList.home-cards .moto-card,
+  .motos.home-cards .moto-card,
+  #destaques .motos .moto-card {
+    max-width: 360px !important; /* cards maiores, como no print */
+    font-size: 14px !important;  /* texto maior */
+  }
+
+  #motoList.home-cards h3,
+  .motos.home-cards h3,
+  #destaques .motos h3 {
+    font-size: 18px !important;  /* título maior */
+  }
+
+  #motoList.home-cards .preco,
+  .motos.home-cards .preco,
+  #destaques .motos .preco {
+    font-size: 22px !important;  /* preço maior */
+  }
+
+  #motoList.home-cards .btn-detalhes,
+  .motos.home-cards .btn-detalhes,
+  #destaques .motos .btn-detalhes {
+    font-size: 14px !important;  /* botão maior */
+    padding: 12px 10px !important;
+  }
 }
 
-#motoList.home-cards .moto-card,
-.motos.home-cards .moto-card,
-#destaques .motos .moto-card {
-  max-width: 300px !important;
-  margin: 0 auto !important;
-  font-size: 12px !important;
-}
 
 #motoList.home-cards .card-media,
 .motos.home-cards .card-media,
@@ -1035,38 +1051,4 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* ==== Aumentar tamanho dos cards da HOME apenas no DESKTOP ==== */
-@media (min-width: 1025px) {
-  #motoList.home-cards .moto-card,
-  .motos.home-cards .moto-card,
-  #destaques .motos .moto-card {
-    max-width: 360px !important; /* aumenta a largura do card */
-    font-size: 14px !important;  /* aumenta a fonte */
-  }
-
-  #motoList.home-cards h3,
-  .motos.home-cards h3,
-  #destaques .motos h3 {
-    font-size: 18px !important;  /* título maior */
-  }
-
-  #motoList.home-cards .preco,
-  .motos.home-cards .preco,
-  #destaques .motos .preco {
-    font-size: 22px !important;  /* preço maior */
-  }
-
-  #motoList.home-cards .info-icons .item span,
-  .motos.home-cards .info-icons .item span,
-  #destaques .motos .info-icons .item span {
-    font-size: 12px !important; /* texto dos ícones maior */
-  }
-
-  #motoList.home-cards .btn-detalhes,
-  .motos.home-cards .btn-detalhes,
-  #destaques .motos .btn-detalhes {
-    font-size: 14px !important;  /* botão maior */
-    padding: 10px 8px !important;
-  }
-}
 
