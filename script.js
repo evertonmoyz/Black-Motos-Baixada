@@ -295,7 +295,7 @@ function mostrarMensagemSemResultado(termoPesquisado = '') {
     }
 
     // IDs das motos que quer mostrar na index.html ( MOTOS EM DESTAQUE)
-    const idsDestaque = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12];
+    const idsDestaque = [1];
 
     // CORREÇÃO: Verificar se estamos na página index E se o elemento existe
     function inicializarIndex() {
