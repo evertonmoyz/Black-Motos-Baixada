@@ -1,1083 +1,947 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
-
-/* ==========================================================================
-   Reset & Base
-   ========================================================================== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { font-size: 16px; }
-
-body {
-  font-family: 'Oxanium', sans-serif;
-  line-height: 1.6;
-  color: #111;
-  background: #fff;
-}
-
-/* ==========================================================================
-   Variáveis CSS
-   ========================================================================== */
-:root {
-  --primary-color: #00aaff;
-  --dark-color: #111;
-  --dark-bg: #000;
-  --light-bg: #f5f5f5;
-  --text-light: #fff;
-  --text-muted: #555;
-  --logo-shift: 0;
-  --search-shift: 0;
-  --shadow-standard: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* ==========================================================================
-   Header
-   ========================================================================== */
-header {
-  background: var(--dark-bg);
-  color: var(--text-light);
-  display: flex;
-  flex-direction: column;
-}
-
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-}
-
-.logo { margin-left: var(--logo-shift); }
-.logo img { height: 120px; display: block; }
-
-.top-search {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  max-width: 520px;
-  margin: 0 20px;
-  transform: translateX(var(--search-shift));
-}
-.top-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border-radius: 20px;
-  border: none;
-  font-size: 15px;
-  font-family: 'Oxanium', sans-serif;
-}
-.top-search .search-icon {
-  position: absolute;
-  right: 12px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px; color: var(--dark-bg);
-  cursor: pointer; background: transparent; line-height: 1;
-}
-
-.social-icons {
-  display: flex; gap: 15px; align-items: center; margin-right: 40px;
-}
-.social-icons i {
-  font-size: 28px; line-height: 1; cursor: pointer; color: var(--text-light);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.social-icons i:hover { transform: scale(1.1); opacity: 0.8; }
-
-/* ==========================================================================
-   Menu
-   ========================================================================== */
-.menu {
-  background: var(--dark-color);
-  padding: 10px 0;
-  border-top: 1px solid #1e1e1e;
-}
-.menu ul {
-  list-style: none; margin: 0; padding: 0 18px;
-  display: flex; justify-content: center; gap: 34px;
-}
-.menu a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 0.3px;
-  transition: color 0.25s ease;
-  font-family: 'Oxanium', sans-serif;
-}
-.menu a:hover { color: var(--primary-color); }
-
-/* ==========================================================================
-   Banner
-   ========================================================================== */
-.banner { position: relative; text-align: center; background: var(--dark-bg); }
-.banner img {
-  width: 100%; height: 450px; object-fit: cover; object-position: center;
-}
-.banner-text {
-  position: absolute; left: 30px; bottom: 30px;
-  color: var(--text-light); font-size: 28px; background: rgba(0,0,0,.6);
-  padding: 10px 14px; border-radius: 6px;
-}
-.estoque-pill {
-  position: absolute; top: 18px; right: 0;
-  background: var(--primary-color); color: #0b1220; text-decoration: none; font-weight: 800;
-  padding: 20px 22px 20px 30px; border-radius: 60px 0 0 60px; box-shadow: 0 8px 20px rgba(0,0,0,.25);
-  text-transform: uppercase; letter-spacing: .5px; font-family: 'Oxanium', sans-serif;
-}
-.estoque-pill:hover { filter: brightness(.9); }
-
-/* ==========================================================================
-   Busca
-   ========================================================================== */
-.busca { padding: 22px 10px; text-align: center; background: var(--light-bg); }
-.busca select, .busca button {
-  padding: 10px 12px; margin: 6px; border-radius: 8px; border: 1px solid #ddd; font-size: 14px; font-family: 'Oxanium', sans-serif;
-}
-.busca button {
-  background: var(--primary-color); border: none; color: var(--text-light); font-weight: bold; cursor: pointer; transition: filter .2s;
-}
-.busca button:hover { filter: brightness(.9); }
-
-/* ==========================================================================
-   Destaques
-   ========================================================================== */
-.destaques { padding: 34px 20px; text-align: center; }
-.destaques h2 {
-  margin: 0 0 20px; font-size: 24px; letter-spacing: .6px; font-family: 'Oxanium', sans-serif;
-}
-.destaques-lead {
-  margin: 0 0 6px; font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: .8px; font-family: 'Oxanium', sans-serif;
-}
-
-.title-with-lines { position: relative; display: inline-block; padding-bottom: 20px; }
-.title-with-lines::after {
-  content: ""; position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px; width: 160px; height: 2px; background: var(--dark-color);
-}
-.title-with-lines::before {
-  content: ""; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 120px; height: 2px; background: var(--dark-color);
-}
-
-/* ==========================================================================
-   Cards de Moto - conjunto único
-   ========================================================================== */
-
-.motos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;   /* LIMITA O TAMANHO DO GRID */
-    margin: 0 auto;
-    align-items: stretch;
-    justify-content: center;
-}
-
-
-
-/* Tablets médios: 2 colunas */
-@media (max-width: 1024px) {
-  .motos { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Mobile: 1 coluna (mantém o que você já tinha) */
-@media (max-width: 768px) {
-  .motos { grid-template-columns: 1fr; }
-}
-
-.moto-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: var(--shadow-standard);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* força todos os cards a igualarem a altura */
-}
-
-.moto-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,.15); }
-
-.moto-card .card-media {
-  width: 100%;
-  aspect-ratio: 16/9; /* padroniza a altura da imagem */
-  overflow: hidden;
-  background: #f5f5f5;
-  position: relative;
-}
-.moto-card .card-media img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
-}
-
-.card-media { position: relative; }
-.foto-contador {
-  position: absolute; top: 10px; right: 10px;
-  background: rgba(0,0,0,.7); color: #fff; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: bold;
-}
-
-.moto-card .card-body {
-  padding: 15px; flex: 1;
-  display: flex; flex-direction: column; justify-content: space-between; text-align: center;
-}
-.moto-card .card-content { flex: 1; display: flex; flex-direction: column; gap: 10px; }
-
-.moto-card h3 {
-  font-size: 16px; margin: 0; font-weight: 800; text-transform: uppercase; line-height: 1.2;
-}
-.moto-card .subtitulo { margin: 0; color: #666; font-size: 12px; }
-.moto-card .modelo { margin: 0; font-weight: 600; font-size: 13px; }
-.moto-card .preco { margin: 0; font-size: 20px; font-weight: 800; color: var(--dark-bg); }
-
-.moto-card .info-icons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 x 2 */
-  gap: 8px;
-  margin: 0 0 15px 0;
-  width: 100%;
-}
-
-.moto-card .info-icons .item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--dark-bg);
-  color: var(--text-light);
-  border-radius: 8px;
-  padding: 10px 8px;
-  height: 65px; /* todos iguais */
-}
-
-.moto-card .info-icons .item i {
-  font-size: 18px;
-  margin-bottom: 4px;
-  line-height: 1;
-}
-
-.moto-card .info-icons .item span {
-  font-size: 11px;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.1;
-  white-space: nowrap;            /* mantém uma linha */
-  overflow: hidden;
-  text-overflow: ellipsis;        /* corta sem quebrar */
-}
-
-
-.moto-card .btn-detalhes {
-  display: block; width: 100%; text-align: center;
-  background: var(--dark-bg); color: var(--text-light);
-  text-decoration: none; font-weight: 800;
-  padding: 12px 10px; border-radius: 6px;
-  transition: filter .2s ease; font-family: 'Oxanium', sans-serif;
-  margin-top: auto; font-size: 14px; letter-spacing: .3px; flex-shrink: 0;
-}
-.moto-card .btn-detalhes:hover { filter: brightness(1.1); }
-
-/* ==========================================================================
-   Contato (mais respiro)
-   ========================================================================== */
-.contato { background: var(--light-bg); padding: 60px 24px; text-align: center; }
-.contato h3 { margin: 0 0 18px; font-family: 'Oxanium', sans-serif; }
-
-.contato-boxes {
-  display: flex; justify-content: center; gap: 28px; row-gap: 32px; margin-top: 10px; flex-wrap: wrap;
-}
-
-.contato-box {
-  background: #fff; padding: 22px; border-radius: 10px;
-  width: 260px; height: 240px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-standard); position: relative; overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.contato-box:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.1); }
-
-.contato-box i { font-size: 30px; margin-bottom: 15px; transition: transform .25s, color .25s; display: block; }
-.contato-box:hover i { transform: scale(1.08); }
-
-.contato-box h4 {
-  font-size: 16px; 
-  font-weight: 700; 
-  margin: 10px 0; 
-  text-align: center;
-  font-family: 'Oxanium', sans-serif;
-  color: var(--dark-color);
-}
-.contato-box p {
-  font-size: 14px; color: var(--text-muted); text-align: center; margin: 0; line-height: 1.5;
-}
-.contato-box a { color: inherit; text-decoration: none; }
-
-.contato-box.whatsapp i { color: #25d366; }
-.contato-box.instagram i { color: #c13584; }
-.contato-box.telefone i { color: #e63946; }
-.contato-box.facebook i { color: #1877f2; }
-
-.contato-btn {
-  position: absolute; left: 0; right: 0; bottom: -100%;
-  padding: 16px; text-align: center; font-weight: 800; letter-spacing: .3px;
-  color: var(--text-light); text-decoration: none; border-radius: 0;
-  box-shadow: 0 -2px 10px rgba(0,0,0,.12); transition: bottom .28s cubic-bezier(.2,.7,.2,1); z-index: 2;
-}
-.contato-box:hover .contato-btn { bottom: 0; }
-
-.contato-box.whatsapp .contato-btn { background: #25d366; }
-.contato-box.instagram .contato-btn { background: #c13584; }
-.contato-box.telefone .contato-btn { background: #e63946; }
-.contato-box.facebook .contato-btn { background: #1877f2; }
-
-@media (hover: none) { .contato-btn { position: static; margin-top: 14px; border-radius: 8px; bottom: auto; } }
-
-/* ==========================================================================
-   Financiamento
-   ========================================================================== */
-.financiamento {
-  padding: 40px 20px; text-align: center;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh;
-}
-.financiamento h2 { font-size: 28px; margin-bottom: 20px; font-weight: 600; color: var(--dark-color); }
-.financiamento p { font-size: 16px; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; }
-.financiamento ul {
-  list-style: none; padding: 0; margin-bottom: 30px; font-size: 16px; text-align: left; color: var(--text-muted); max-width: 600px;
-}
-.financiamento li { margin: 10px 0; font-weight: bold; display: flex; align-items: center; }
-.financiamento li:before { content: "✓"; margin-right: 10px; color: var(--primary-color); font-size: 20px; }
-
-.simulador {
-  background: var(--light-bg); padding: 30px 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,.1);
-  max-width: 800px; margin: 0 auto;
-}
-.simulador h3 { font-size: 24px; margin-bottom: 20px; color: var(--dark-color); }
-.simulador label { display: block; margin-bottom: 10px; font-size: 16px; color: #333; }
-.simulador input, .simulador select {
-  width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ddd; font-size: 16px;
-}
-.simulador button {
-  width: 100%; padding: 12px; border-radius: 8px; background-color: var(--primary-color); color: var(--text-light);
-  font-size: 16px; font-weight: bold; border: none; cursor: pointer; transition: filter .2s;
-}
-.simulador button:hover { filter: brightness(.9); }
-.resultado { font-size: 18px; font-weight: bold; color: var(--primary-color); margin-top: 20px; }
-
-/* ==========================================================================
-   Instagram Bar
-   ========================================================================== */
-.instagram-bar {
-  background: linear-gradient(to right, var(--dark-bg), #1a1a1a);
-  color: var(--text-light);
-  height: 120px;
-  padding: 0 10px;
-  text-align: center;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-.instagram-bar a { text-decoration: none; color: inherit; display: inline-block; font-family: 'Oxanium', sans-serif; }
-.instagram-bar i { font-size: 38px; margin-bottom: 8px; color: var(--text-light); line-height: 1; }
-.instagram-bar div { font-size: 16px; line-height: 1.4; font-family: 'Oxanium', sans-serif; }
-
-/* ==========================================================================
-   Localização
-   ========================================================================== */
-.mapa {
-  display: flex; justify-content: center; align-items: center; gap: 20px;
-  padding: 40px 20px; background: #fff; flex-wrap: wrap;
-}
-.mapa-info { flex: 1; max-width: 520px; font-size: 16px; color: #333; text-align: left; }
-.mapa-info h3 {
-  font-size: 24px; font-weight: bold; margin-bottom: 10px; color: var(--dark-bg); position: relative; padding-bottom: 15px;
-}
-.mapa-info h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background-color: var(--dark-bg); }
-.mapa-info p { margin: 6px 0; font-size: 16px; line-height: 1.6; color: var(--text-muted); }
-.mapa iframe {
-  width: 100%; max-width: 600px; height: 350px; border: 0; border-radius: 8px;
-}
-.maps-btn {
-  display: inline-block; margin-top: 10px; padding: 10px 16px; border-radius: 8px; background: var(--primary-color); color: var(--text-light);
-  text-decoration: none; font-weight: bold; font-family: 'Oxanium', sans-serif;
-}
-.maps-btn:hover { filter: brightness(.9); }
-
-/* ==========================================================================
-   Quem Somos
-   ========================================================================== */
-.quem-somos { text-align: center; padding: 80px 20px; }
-.quem-somos h1 { font-family: 'Oxanium', sans-serif; font-size: 28px; font-weight: 700; color: var(--dark-color); margin-bottom: 15px; }
-.quem-somos h2 { font-family: 'Oxanium', sans-serif; font-size: 22px; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
-.linha { width: 150px; height: 2px; background-color: var(--dark-color); margin: 15px auto; }
-.linha-menor { width: 120px; height: 2px; background-color: var(--dark-color); margin: 10px auto; }
-.quem-somos p {
-  font-family: 'Oxanium', sans-serif; font-size: 16px; color: var(--text-muted); line-height: 1.8;
-  margin: 20px auto; max-width: 800px; padding: 0 20px; text-align: justify;
-}
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-.footer { background: var(--dark-bg); color: var(--text-light); padding: 20px 0; font-size: 14px; }
-.footer-content {
-  display: flex; align-items: flex-start; justify-content: flex-start; gap: 24px; flex-wrap: wrap;
-  max-width: 1200px; margin: 0 auto; padding: 0 20px;
-}
-.site-map { flex: 0 0 180px; min-width: 180px; margin-top: 22px; }
-.site-map h4 { margin: 0 0 10px; font-size: 16px; font-family: 'Oxanium', sans-serif; }
-.site-map ul { list-style: none; padding: 0; margin: 0; }
-.site-map ul li { margin-bottom: 8px; }
-.footer a { text-decoration: none; color: var(--text-light); font-family: 'Oxanium', sans-serif; }
-.footer-text { flex: 1; min-width: 320px; margin-top: 22px; line-height: 1.6; text-align: justify; }
-.footer-text p { margin: 0; font-family: 'Oxanium', sans-serif; padding-top: 26px; }
-.footer-center { text-align: center; margin-top: 20px; }
-.footer-center p { font-family: 'Oxanium', sans-serif; }
-
-/* ==========================================================================
-   Catálogo + Filtros
-   ========================================================================== */
-.catalogo-wrapper {
-  max-width: 1280px;
-  margin: 24px auto 40px;
-  padding: 0 20px;  /* a “guia” lateral do layout */
-  overflow: visible;/* importante para a borda do aside não sumir */
-}
-
-.catalog-grid{
-  display:grid;
-  grid-template-columns: minmax(0,1fr) 320px; /* cards | filtros */
-  gap:24px;
-  align-items:start;
-}
-@media (max-width:1024px){ .catalog-grid{ grid-template-columns:1fr; } }
-
-.catalog-toolbar{
-  display:flex; align-items:center; justify-content:space-between; gap:14px;
-  background:#f6f6f6; border:1px solid #e5e5e5; border-radius:10px;
-  padding:10px 12px; margin-bottom:14px; box-shadow:0 2px 6px rgba(0,0,0,.04); font-family:'Oxanium',sans-serif;
-}
-.toolbar-left{ display:flex; align-items:center; gap:10px; font-size:12px; color:#555; }
-.toolbar-views{ display:flex; gap:6px; }
-.toolbar-views button{ width:32px; height:32px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; }
-.toolbar-right{ display:flex; align-items:center; gap:10px; }
-.toolbar-right select, .toolbar-right button{
-  height:36px;
-  padding:0 12px;
-  border:1px solid #ddd;
-  border-radius:6px;
-  background:#fff;
-  cursor:pointer;
-  font-family:'Oxanium',sans-serif;
-  font-size:13px;
-}
-
-
-/* ===== Filtros — visual e espaçamento iguais ao print ===== */
-.filtros{
-  position: sticky;
-  top:16px;
-  align-self:start;
-
-  background:#fff;
-  border:1px solid #e6e6e6;
-  border-radius:12px;
-  padding:14px;
-
-  box-shadow:0 2px 6px rgba(0,0,0,.04);
-  font-family:'Oxanium',sans-serif;
-  overflow:visible;
-}
-
-.filtros .grupo{
-  padding:10px 0; margin:0;
-}
-.filtros .grupo + .grupo{
-  border-top:1px solid #eeeeee;           /* linha fininha entre blocos */
-}
-.filtros h4{
-  font-size:12px;                          /* pequeno como no print */
-  margin:0 0 8px; 
-  padding:0 0 6px;
-  text-transform:uppercase;
-  letter-spacing:.06em; font-weight:800; 
-  color:#222;
-}
-.filtros .dupla{
-  display:grid; grid-template-columns:1fr 1fr; gap:8px;
-  margin-bottom:6px;
-}
-.filtros input[type="number"]{
-  height:34px; padding:0 10px; border:1px solid #ddd; border-radius:6px; width:100%;
-  font-size:13px;
-}
-.filtros .linha{
-  display:flex; align-items:center; gap:8px; margin:18px 0; padding:0;
-  background:transparent; border:0; width:100%;
-}
-.filtros input[type="checkbox"]{
-  width:14px; height:14px; flex:none;      /* checkbox pequeno */
-}
-.filtros label{
-  flex:1;
-  font-size:12px; color:#1f1f1f; line-height:1.25; cursor:pointer;
-  display:inline-block; text-decoration:none !important;
-  white-space:normal; word-break:normal; overflow-wrap:anywhere;
-}
-
-/* Ações (botões) exatamente como no print */
-.filtros .acoes{ display:flex; gap:10px; margin-top:12px; }
-.filtros .acoes .aplicar{
-  flex:1; height:38px;
-  border:1px solid #111; background:#111; color:#fff;
-  border-radius:8px; padding:0 14px; font-weight:800; font-size:13px; cursor:pointer;
-}
-.filtros .acoes .limpar{
-  flex:1; height:38px;
-  border:1px solid #ddd; background:#f6f6f6; color:#111;
-  border-radius:8px; padding:0 14px; font-weight:800; font-size:13px; cursor:pointer;
-}
-.filtros .acoes .aplicar:hover{ filter:brightness(.95); }
-.filtros .acoes .limpar:hover{ background:#f0f0f0; }
-
-/* Meta do cartão de listagem */
-.card-meta{ display:flex; justify-content:space-between; gap:6px; font-size:11px; color:#666; }
-
-/* ==========================================================================
-   CARDS VENDIDOS + Intro
-   ========================================================================== */
-.moto-card-vendido {
-  background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.1);
-  overflow:hidden; position:relative; border-bottom:3px solid #c00;
-}
-.moto-card-vendido .card-media img{ width:100%; height:200px; object-fit:cover; }
-.moto-card-vendido .card-content{ padding:15px; }
-.moto-card-vendido .subtitulo{
-  font-size:12px; color:#666; margin:0 0 8px 0; text-transform:uppercase;
-}
-.moto-card-vendido h3{ font-size:16px; font-weight:700; margin:0 0 15px 0; color:#333; }
-
-.info-icons-vendido{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.icon-item{
-  display:flex; flex-direction:column; align-items:center; text-align:center;
-  background:#000; color:#fff; padding:8px 4px; border-radius:4px; font-size:11px;
-}
-.icon-item i{ font-size:14px; margin-bottom:4px; }
-.icon-item span{ font-weight:500; }
-
-.moto-card-vendido.sold .sold-ribbon{
-  position:absolute; top:-8px; left:-8px; background:#c00; color:#fff; font-size:12px; font-weight:700;
-  padding:4px 8px; border-radius:4px; text-transform:uppercase; z-index:2;
-}
-
-.intro-vendidos{
-  text-align:center; max-width:800px; margin:40px auto; padding:0 20px;
-}
-.intro-vendidos h2{
-  font-family:'Montserrat',sans-serif; font-size:28px; font-weight:700; color:#333; margin:0 0 15px 0; line-height:1.2;
-}
-.intro-vendidos p{ font-size:16px; color:#666; margin:0; line-height:1.4; font-weight:400; }
-@media (max-width:768px){
-  .intro-vendidos h2{ font-size:24px; }
-  .intro-vendidos p{ font-size:14px; }
-}
-
-/* ==========================================================================
-   TOOLBAR V2
-   ========================================================================== */
-.search-toolbar-v2{
-  display:flex; justify-content:space-between; align-items:center;
-  background:#f9f9f9; border:1px solid #e0e0e0; border-radius:6px;
-  padding:12px 20px; margin:25px auto; box-shadow:0 1px 3px rgba(0,0,0,.1);
-  max-width:calc(100% - 40px); width:auto; overflow:hidden;
-}
-.toolbar-left-v2{ display:flex; align-items:center; gap:15px; flex:1; }
-.results-text-v2{ font-size:13px; color:#555; font-weight:400; white-space:nowrap; }
-.view-buttons-v2{ display:flex; gap:2px; border:1px solid #ddd; border-radius:4px; overflow:hidden; }
-.view-btn-v2{
-  width:32px; height:30px; border:none; background:#fff; display:flex; align-items:center; justify-content:center;
-  cursor:pointer; font-size:13px; color:#666; transition:all .2s;
-}
-.view-btn-v2:hover{ background:#f5f5f5; }
-.view-btn-v2.active{ background:#00aaff; color:#fff; }
-.toolbar-right-v2{ display:flex; align-items:center; gap:10px; }
-.toolbar-select-v2{
-  height:30px; border:1px solid #ddd; border-radius:4px; padding:0 8px; background:#fff; font-size:12px; color:#555; min-width:110px;
-}
-.toolbar-select-v2:focus{ outline:none; border-color:#00aaff; box-shadow:0 0 0 2px rgba(0,123,255,.25); }
-.pagination-btn-v2{
-  height:30px; border:1px solid #ddd; border-radius:4px; padding:0 12px; background:#fff; font-size:12px; cursor:pointer; color:#555; transition:all .2s;
-}
-.pagination-btn-v2:hover:not(:disabled){ background:#f8f9fa; border-color:#00aaff; }
-.pagination-btn-v2:disabled{ color:#ccc; cursor:not-allowed; background:#f8f9fa; }
-
-@media (max-width: 890px) {
-  .search-toolbar-v2{ max-width: calc(100% - 40px); margin: 25px 20px; }
-}
-@media (max-width: 768px) {
-  .search-toolbar-v2{ flex-direction: column; gap: 12px; align-items: stretch; max-width: calc(100% - 20px); margin: 25px 10px; }
-  .toolbar-left-v2, .toolbar-right-v2{ justify-content: center; flex-wrap: wrap; }
-  .results-text-v2{ text-align: center; white-space: normal; }
-}
-
-/* ==========================================================================
-   Encontre sua moto / botões Busca
-   ========================================================================== */
-.encontre-moto { background: var(--light-bg); text-align: center; padding: 18px 0 2px; }
-.encontre-moto .title-with-lines { margin-bottom: 0; font-size: 2rem; color: var(--dark-color); font-family: 'Oxanium', sans-serif; }
-.busca button, .busca button#buscarBtn {
-  background: #000 !important; color: var(--text-light); border: none; font-weight: bold; font-family: 'Oxanium', sans-serif; transition: filter .2s;
-}
-.busca button:hover, .busca button#buscarBtn:hover { filter: brightness(.9); }
-
-/* ==========================================================================
-   WhatsApp Float
-   ========================================================================== */
-.whatsapp-float {
-  position: fixed; right: 28px; bottom: 28px; z-index: 9999;
-  background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 36px; cursor: pointer; transition: background .2s, box-shadow .2s; text-decoration: none;
-}
-.whatsapp-float:hover { background: #128c7e; box-shadow: 0 10px 32px rgba(0,0,0,0.18); text-decoration: none; }
-
-/* ==========================================================================
-   Ajustes específicos iOS/Android
-   ========================================================================== */
-input[type="text"], input[type="number"], select, textarea { font-size: 16px !important; }
-button, .btn, .btn-detalhes, a.btn { min-height: 44px; min-width: 44px; }
-body, html { overflow-x: hidden; }
-html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-body { overscroll-behavior-y: contain; }
-
-/* ==========================================================================
-   Responsividade
-   ========================================================================== */
-@media (max-width: 1100px) { .logo img { height: 100px; } }
-
-@media (max-width: 1024px) {
-  :root { --logo-shift: 0; --search-shift: 0; }
-
-  .top-bar { flex-direction: column; gap: 15px; padding: 15px 20px; }
-  .logo { margin-left: 0; order: 1; }
-  .logo img { height: 80px; }
-  .top-search { order: 2; transform: none; max-width: 100%; margin: 0; width: 100%; }
-  .social-icons { order: 3; margin-right: 0; justify-content: center; }
-}
-
-@media (max-width: 900px) {
-  .logo { margin-left: 0; }
-  .logo img { height: 80px; }
-  .mapa iframe { width: 100%; }
-}
-
-@media (max-width: 768px) {
-  /* Header */
-  .top-bar { padding: 12px 15px; gap: 12px; }
-  .logo img { height: 70px; }
-  .top-search input { padding: 12px 45px 12px 18px; font-size: 16px; border-radius: 25px; }
-  .top-search .search-icon { right: 15px; font-size: 18px; }
-  .social-icons i { font-size: 24px; }
-
-  /* Menu */
-  .menu { padding: 8px 0; }
-  .menu ul { flex-wrap: wrap; gap: 15px; justify-content: center; padding: 0 15px; }
-  .menu a { font-size: 14px; padding: 8px 12px; display: block; border-radius: 4px; transition: background .2s; }
-  .menu a:hover { background: rgba(255,255,255,.1); }
-
-  /* Banner */
-  .banner img { height: 300px; }
-  .banner-text { left: 15px; bottom: 15px; font-size: 20px; padding: 8px 12px; }
-  .estoque-pill { top: 15px; padding: 15px 18px 15px 25px; font-size: 14px; }
-
-  /* Busca */
-  .busca { padding: 15px 8px; }
-  .busca select, .busca button { padding: 12px 10px; margin: 4px; font-size: 14px; min-height: 44px; border-radius: 6px; }
-
-  /* Cards – MAIORES no mobile e 1 por linha */
-  .motos { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
-  .moto-card .card-media { aspect-ratio: 16/10; }
-  .moto-card h3 { font-size: 18px; }
-  .moto-card .preco { font-size: 22px; }
-  .moto-card .info-icons { gap: 10px; }
-  .moto-card .info-icons .item { height: 64px; padding: 10px 6px; }
-  .moto-card .info-icons .item i { font-size: 20px; }
-  .moto-card .info-icons .item span { font-size: 12px; }
-  .moto-card .btn-detalhes { font-size: 16px; min-height: 48px; border-radius: 10px; }
-
-  
-  /* Filtros */
-  .filtros { padding: 12px; }
-  .filtros input[type="checkbox"]{ width:18px; height:18px; }
-  .filtros label{ font-size:13px; min-height:44px; display:flex; align-items:center; }
-  .filtros input[type="number"]{ min-height:44px; font-size:16px; }
-
-  /* Contato */
-  .contato { padding: 40px 16px; }
-  .contato-boxes { gap: 18px; justify-content: center; flex-wrap: wrap; }
-  .contato-box { width: 220px; height: 220px; }
-}
-
-@media (max-width: 560px) {
-  .motos { grid-template-columns: 1fr; gap: 15px; }
-  .moto-card .card-media { aspect-ratio: 16/9; }
-  .moto-card { max-width: 400px; margin: 0 auto; }
-}
-
-@media (max-width: 480px) {
-  .menu ul { gap: 10px; padding: 0 10px; }
-  .menu a { font-size: 13px; padding: 6px 10px; }
-
-  .banner img { height: 250px; }
-  .banner-text { left: 12px; bottom: 12px; font-size: 18px; padding: 6px 10px; }
-  .estoque-pill { top: 12px; padding: 12px 15px 12px 20px; font-size: 13px; }
-
-  .busca { padding: 12px 6px; }
-  .busca select, .busca button { display: block; width: 100%; margin: 3px 0; padding: 14px 12px; font-size: 15px; }
-
-  /* Contato horizontal para telas muito pequenas */
-  .contato-boxes { flex-direction: column; align-items: center; gap: 15px; }
-  .contato-box {
-    width: 100%; max-width: 300px; height: 140px;
-    flex-direction: row; text-align: left; padding: 20px; justify-content: flex-start;
-  }
-  .contato-box i { font-size: 28px; margin-right: 20px; margin-bottom: 0; flex-shrink: 0; }
-  .contato-box .content { flex: 1; }
-  .contato-btn { position: static; margin-top: 10px; border-radius: 6px; }
-
-  /* WhatsApp menor */
-  .whatsapp-float { width: 50px; height: 50px; right: 15px; bottom: 15px; font-size: 26px; }
-}
-
-@media (max-width: 768px) {
-  .whatsapp-float { width: 55px; height: 55px; right: 20px; bottom: 20px; font-size: 30px; }
-}
-
-/* Wrapper da página Vendidos com a mesma largura/padding do catálogo */
-.vendidos-page {
-  max-width: 1280px;
-  margin: 24px auto 40px;
-  padding: 0 20px;
-}
-
-
-/* ==== SOBRESCRITA: Aumentar cards HOME no DESKTOP ==== */
-@media (min-width: 1025px) {
-    #motoList.home-cards .card-body,
-    .motos.home-cards .card-body,
-    #destaques .motos .card-body {
-        padding: 15px !important; /* Aumentado de 10px */
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('searchInput');
+    const btn = document.getElementById('searchBtn');
+    const motoList = document.getElementById('motoList');
+
+      /* ---------- BUSCA GLOBAL  (NOVO) ---------- */
+  function goSearch() {
+    const termo = input.value.trim();
+    if (termo) {
+      window.location.href = `motos.html?q=${encodeURIComponent(termo)}`;
     }
+  }
+
+  if (input && btn) {
+    btn.addEventListener('click', goSearch);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') goSearch();
+    });
+  }
+
+    // Dados das motos - CORRIGIDOS: todas com array "imagens"
+    window.motosData = [
+        {
+            id: 1,
+            nome: "MT-07 ABS",
+            preco: 47600,
+            ano: 2025,
+            marca: "Yamaha",
+            categoria: "Naked",
+            combustivel: "Gasolina",
+            cor: "Preta",
+            quilometragem: 15000,
+            cambio: "Manual",
+            imagens: ["MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg"],
+            cilindrada: "698cc",
+            descricao: "Motocicleta em ótimo estado, de único dono e com 15.000 km rodados. Equipado com sistema ABS, revisada, com garantia e pronta para uso urbano e viagens curtas. Ideal para quem busca desempenho e economia, sem abrir mão do estilo.",
+            zeroKm: false,
+            unicoDono: true,
+            blindada: false,
+            revisada: true,
+            garantia: true
+        },
+
+    ];
+
+    /* ======= SUPORTE A ?q= + RENDER ======= */
+
+    // Base e lista de trabalho
+    window.motosBase = Array.isArray(window.motosData) ? window.motosData.slice() : [];
+    window.listaTrabalho = window.motosBase.slice();
+
+    // Render dos cards na #motoList
+    function renderMotos(lista) {
+    const ul = document.getElementById('motoList');
+    if (!ul) return;
+
+    if (!Array.isArray(lista) || lista.length === 0) {
+        const qs = new URLSearchParams(window.location.search);
+        const termo = (typeof obterTermoPesquisado === 'function' ? obterTermoPesquisado() : '') || qs.get('q') || '';
+        if (typeof mostrarMensagemSemResultado === 'function') {
+        mostrarMensagemSemResultado(termo);
+        } else {
+        ul.innerHTML = `<div class="moto-card"><div class="card-body"><h3>Nenhuma moto encontrada</h3><p>Não encontramos motos com as características: <strong>${termo || 'informadas'}</strong></p></div></div>`;
+        }
+        return;
+    }
+
+    ul.innerHTML = `
+        ${lista.map(moto => `
+        <div class="moto-card">
+            <div class="card-media">
+            <img src="${(moto.imagens && moto.imagens) ? moto.imagens : ''}" alt="${moto.nome}">
+            <div class="foto-contador">${(moto.imagens ? moto.imagens.length : 0)} fotos</div>
+            </div>
+            <div class="card-body">
+            <div class="card-content">
+                <div class="subtitulo">${moto.categoria} • USADO • ${moto.ano}/${moto.ano}</div>
+                <h3>${moto.marca} ${moto.nome}</h3>
+                <div class="modelo">${moto.cilindrada} • ${moto.cor}</div>
+                <div class="preco">R$ ${(moto.preco || 0).toLocaleString('pt-BR')}</div>
+                <div class="info-icons">
+                <div class="item"><i class="fa-solid fa-route"></i><span>${(moto.quilometragem || 0).toLocaleString('pt-BR')} km</span></div>
+                <div class="item"><i class="fa-solid fa-gas-pump"></i><span>${moto.combustivel}</span></div>
+                <div class="item"><i class="fa-solid fa-gear"></i><span>${moto.cambio}</span></div>
+                </div>
+            </div>
+            <a class="btn-detalhes" href="detalhes.html?id=${moto.id}">Ver detalhes</a>
+            </div>
+        </div>
+        `).join('')}
+    `;
+    }
+
+    // Aplica ?q= e renderiza assim que o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', () => {
+    // Garante base/lista caso o script rode antes
+    window.motosBase = Array.isArray(window.motosData) ? window.motosData.slice() : [];
+    window.listaTrabalho = window.motosBase.slice();
+
+    const params = new URLSearchParams(window.location.search);
+    const termo = params.get('q');
+
+    if (termo) {
+        const base = window.motosBase.slice();
+        const filtrada = (typeof aplicarBuscaLivre === 'function') ? aplicarBuscaLivre(base) : base;
+        window.listaTrabalho = filtrada;
+        renderMotos(filtrada);
+    } else {
+        renderMotos(window.listaTrabalho);
+    }
+    });
+
+
+
+
+    /* === utilitário: remove acento e deixa minúsculo ========== */
+    const normalizar = s =>
+    s
+        .toString()
+        .normalize('NFD')           // separa acentos
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
     
-    #motoList.home-cards h3,
-    .motos.home-cards h3,
-    #destaques .motos h3 {
-        font-size: 16px !important; /* Aumentado de 13px */
-        margin-bottom: 8px !important; /* Aumentado de 5px */
+    // mantém seu normalizar() como está
+
+    function aplicarBuscaLivre(lista) {
+        const params = new URLSearchParams(window.location.search);
+        const termo = params.get('q') || '';
+        if (!termo) return lista;
+
+        const tokens = termo
+            .split(/[,\s]+/)  // Separando múltiplos termos (vírgula ou espaço)
+            .map(t => normalizar(t))  // Normaliza (sem acentos, minúsculo)
+            .filter(Boolean);
+
+        return lista.filter(moto => {
+            const alvo = normalizar(
+                `${moto.nome} ${moto.marca} ${moto.categoria} ${moto.cor}
+                ${moto.combustivel} ${moto.cambio} ${moto.cilindrada}
+                ${moto.ano} ${moto.quilometragem}`
+            );
+            return tokens.some(tok => alvo.includes(tok));  // Verifica se algum token bate
+        });
     }
+
+
+
+
+    // Função para identificar o que foi pesquisado
+    function obterTermoPesquisado() {
+        const termo = input ? input.value.trim() : '';
+        if (termo) return termo;
+        
+        // Verificar filtros ativos
+        const marcaSelecionada = Array.from(document.querySelectorAll('input[type="checkbox"][value]'))
+            .filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Marca'))
+            .map(cb => cb.value);
+        
+        const categoriaSelecionada = Array.from(document.querySelectorAll('input[type="checkbox"][value]'))
+            .filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Categoria'))
+            .map(cb => cb.value);
+            
+        const corSelecionada = Array.from(document.querySelectorAll('input[type="checkbox"][value]'))
+            .filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Cor'))
+            .map(cb => cb.value);
+            
+        const combustivelSelecionado = Array.from(document.querySelectorAll('input[type="checkbox"][value]'))
+            .filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Combustível'))
+            .map(cb => cb.value);
+            
+        const cambioSelecionado = Array.from(document.querySelectorAll('input[type="checkbox"][value]'))
+            .filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Câmbio'))
+            .map(cb => cb.value);
+        
+        // Verificar campos de ano, preço e km
+        const anoMin = document.getElementById('anoMin')?.value;
+        const anoMax = document.getElementById('anoMax')?.value;
+        const precoMin = document.getElementById('precoMin')?.value;
+        const precoMax = document.getElementById('precoMax')?.value;
+        const kmMin = document.getElementById('kmMin')?.value;
+        const kmMax = document.getElementById('kmMax')?.value;
+        
+        // Montar descrição do que foi pesquisado
+        let termosAtivos = [];
+        
+        if (marcaSelecionada.length > 0) termosAtivos.push(`marca${marcaSelecionada.length > 1 ? 's' : ''}: ${marcaSelecionada.join(', ')}`);
+        if (categoriaSelecionada.length > 0) termosAtivos.push(`categoria${categoriaSelecionada.length > 1 ? 's' : ''}: ${categoriaSelecionada.join(', ')}`);
+        if (corSelecionada.length > 0) termosAtivos.push(`cor${corSelecionada.length > 1 ? 'es' : ''}: ${corSelecionada.join(', ')}`);
+        if (combustivelSelecionado.length > 0) termosAtivos.push(`combustível: ${combustivelSelecionado.join(', ')}`);
+        if (cambioSelecionado.length > 0) termosAtivos.push(`câmbio: ${cambioSelecionado.join(', ')}`);
+        
+        if (anoMin || anoMax) {
+            let anoRange = 'ano';
+            if (anoMin && anoMax) anoRange += ` entre ${anoMin} e ${anoMax}`;
+            else if (anoMin) anoRange += ` a partir de ${anoMin}`;
+            else if (anoMax) anoRange += ` até ${anoMax}`;
+            termosAtivos.push(anoRange);
+        }
+        
+        if (precoMin || precoMax) {
+            let precoRange = 'preço';
+            if (precoMin && precoMax) precoRange += ` entre R$ ${parseInt(precoMin).toLocaleString()} e R$ ${parseInt(precoMax).toLocaleString()}`;
+            else if (precoMin) precoRange += ` a partir de R$ ${parseInt(precoMin).toLocaleString()}`;
+            else if (precoMax) precoRange += ` até R$ ${parseInt(precoMax).toLocaleString()}`;
+            termosAtivos.push(precoRange);
+        }
+        
+        if (kmMin || kmMax) {
+            let kmRange = 'quilometragem';
+            if (kmMin && kmMax) kmRange += ` entre ${parseInt(kmMin).toLocaleString()} e ${parseInt(kmMax).toLocaleString()} km`;
+            else if (kmMin) kmRange += ` a partir de ${parseInt(kmMin).toLocaleString()} km`;
+            else if (kmMax) kmRange += ` até ${parseInt(kmMax).toLocaleString()} km`;
+            termosAtivos.push(kmRange);
+        }
+        
+        return termosAtivos.length > 0 ? termosAtivos.join(', ') : 'filtros aplicados';
+    }
+
+    // Função para salvar informações da pesquisa
+    function salvarInfoPesquisa(termoPesquisado) {
+        const infoPesquisa = {
+            termo: termoPesquisado,
+            timestamp: new Date().getTime()
+        };
+        localStorage.setItem('pesquisaSemResultado', JSON.stringify(infoPesquisa));
+    }
+
+    // Função para verificar se há info de pesquisa sem resultado
+    function verificarPesquisaSemResultado() {
+        const info = localStorage.getItem('pesquisaSemResultado');
+        if (info) {
+            const pesquisa = JSON.parse(info);
+            // Verificar se a pesquisa foi feita há menos de 30 segundos
+            if (new Date().getTime() - pesquisa.timestamp < 30000) {
+                mostrarMensagemSemResultado(pesquisa.termo);
+                localStorage.removeItem('pesquisaSemResultado');
+                return true;
+            }
+        }
+        return false;
+    }
+
+// ----- MENSAGEM QUANDO NÃO HÁ RESULTADOS -----
+function mostrarMensagemSemResultado(termoPesquisado = '') {
+  if (!motoList) return;
+
+  motoList.innerHTML = `
+    <div style="
+        text-align:center;
+        padding:60px 20px;
+        background:#f9f9f9;
+        border-radius:10px;
+        margin:20px 0;
+        box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    ">
+      <i class="fas fa-search" style="font-size:48px;color:#ccc;margin-bottom:18px;"></i>
+      <h2 style="color:#333;margin-bottom:12px;">Nenhuma moto encontrada</h2>
+      <p style="font-size:16px;color:#555;margin-bottom:20px;">
+        Não encontramos motos com as características:
+        <strong>${termoPesquisado || 'informadas'}</strong>
+      </p>
+      <button onclick="limparFiltros()" style="
+          background:#000;
+          color:#fff;
+          border:none;
+          padding:10px 22px;
+          border-radius:5px;
+          cursor:pointer;
+          font-size:14px;
+      ">
+        Limpar filtros
+      </button>
+      <a href="https://wa.me/5513997730431?text=Olá! Procuro uma moto com características específicas. Podem me ajudar?"
+         target="_blank"
+         style="
+           display:inline-block;
+           margin-left:12px;
+           background:#25d366;
+           color:#fff;
+           padding:10px 22px;
+           border-radius:5px;
+           text-decoration:none;
+           font-size:14px;
+      ">
+        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </div>`;
+}
+
+
+
+    // formata 123456 em "123.456"
+    function kmFormat(valor) {
+        return valor.toLocaleString('pt-BR');
+    }
+
+    // IDs das motos que quer mostrar na index.html ( MOTOS EM DESTAQUE)
+    const idsDestaque = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12];
+
+    // CORREÇÃO: Verificar se estamos na página index E se o elemento existe
+    function inicializarIndex() {
+        const isIndex = window.location.pathname.endsWith("index.html") || 
+                    window.location.pathname === "/" || 
+                    window.location.pathname.endsWith("/");
+        
+        if (isIndex && motoList) {
+            console.log('Inicializando cards do index...'); // Para debug
+            gerarCardsPorIds(idsDestaque);
+        } else if (isIndex && !motoList) {
+            console.error('Elemento motoList não encontrado no index.html');
+        }
+    }
+
+    // Executar após DOM carregado
+    setTimeout(inicializarIndex, 100);
+
+    function gerarCardsPorIds(ids) {
+        if (!motoList) return;
+        
+        console.log('IDs solicitados na ordem:', ids); // Para debug
+        
+        motoList.innerHTML = '';
+        
+        // Gerar cards EXATAMENTE na ordem dos IDs fornecidos
+        ids.forEach(id => {
+            const moto = window.motosData.find(m => m.id === id);
+            if (moto) {
+                const card = document.createElement('div');
+                card.classList.add('moto-card');
+                
+                // Usar primeira imagem do array
+                const imagemPrincipal = moto.imagens && moto.imagens.length > 0 ? moto.imagens[0] : 'placeholder.jpg';
+                
+                card.innerHTML = `
+                    <div class="card-media">
+                        <img src="images/${imagemPrincipal}" alt="${moto.marca} ${moto.nome}">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-content">
+                            <p class="subtitulo">${moto.categoria} • USADO • ${moto.ano}/${moto.ano}</p>
+                            <h3>${moto.marca} ${moto.nome}</h3>
+                            <p class="preco">R$ ${moto.preco.toLocaleString('pt-BR')}</p>
+                            <div class="info-icons">
+                                <div class="item"><i class="fas fa-calendar"></i><span>${moto.ano}</span></div>
+                                <div class="item"><i class="fas fa-palette"></i><span>${moto.cor}</span></div>
+                                <div class="item"><i class="fas fa-motorcycle"></i><span>${moto.categoria}</span></div>
+                                <div class="item"><i class="fas fa-tachometer-alt"></i><span>${kmFormat(moto.quilometragem)} km</span></div>
+                                <div class="item"><i class="fas fa-gas-pump"></i><span>${moto.combustivel}</span></div>
+                                <div class="item"><i class="fas fa-cogs"></i><span>${moto.cilindrada}</span></div>
+                            </div>
+                        </div>
+                        <a href="detalhes.html?id=${moto.id}" class="btn-detalhes">Mais Detalhes</a>
+                    </div>
+                `;
+                
+                // Adicionar diretamente na ordem correta
+                motoList.appendChild(card);
+                
+                console.log(`Card adicionado: ID ${id} - ${moto.marca} ${moto.nome}`); // Para debug
+            } else {
+                console.warn(`Moto com ID ${id} não encontrada`); // Para debug
+            }
+        });
+    }
+
+    // Variáveis para controle de filtros e paginação
+    let motosFiltradas = aplicarBuscaLivre([...window.motosData]);
+    let currentPage   = 1;
+    let itemsPerPage  = 12;
+    let viewMode      = 'grid';
+
+
+    // SINCRONIZAÇÃO DE RANGES COM CAMPOS NUMÉRICOS
+    function setupRangeSync() {
+        const anoMinRange = document.getElementById('anoMinRange');
+        const anoMaxRange = document.getElementById('anoMaxRange');
+        const anoMin = document.getElementById('anoMin');
+        const anoMax = document.getElementById('anoMax');
+        
+        if (anoMinRange && anoMin) {
+            anoMinRange.addEventListener('input', () => {
+                anoMin.value = anoMinRange.value;
+                if (anoMax) anoMax.min = anoMinRange.value;
+            });
+        }
+        if (anoMaxRange && anoMax) {
+            anoMaxRange.addEventListener('input', () => {
+                anoMax.value = anoMaxRange.value;
+                if (anoMin) anoMin.max = anoMaxRange.value;
+            });
+        }
+
+        const precoMinRange = document.getElementById('precoMinRange');
+        const precoMaxRange = document.getElementById('precoMaxRange');
+        const precoMin = document.getElementById('precoMin');
+        const precoMax = document.getElementById('precoMax');
+        
+        if (precoMinRange && precoMin) {
+            precoMinRange.addEventListener('input', () => {
+                precoMin.value = precoMinRange.value;
+                if (precoMax) precoMax.min = precoMinRange.value;
+            });
+        }
+        if (precoMaxRange && precoMax) {
+            precoMaxRange.addEventListener('input', () => {
+                precoMax.value = precoMaxRange.value;
+                if (precoMin) precoMin.max = precoMaxRange.value;
+            });
+        }
+
+        const kmMinRange = document.getElementById('kmMinRange');
+        const kmMaxRange = document.getElementById('kmMaxRange');
+        const kmMin = document.getElementById('kmMin');
+        const kmMax = document.getElementById('kmMax');
+        
+        if (kmMinRange && kmMin) {
+            kmMinRange.addEventListener('input', () => {
+                kmMin.value = kmMinRange.value;
+                if (kmMax) kmMax.min = kmMinRange.value;
+            });
+        }
+        if (kmMaxRange && kmMax) {
+            kmMaxRange.addEventListener('input', () => {
+                kmMax.value = kmMaxRange.value;
+                if (kmMin) kmMin.max = kmMaxRange.value;
+            });
+        }
+    }
+
+    // Função para aplicar filtros - MODIFICADA
+    function aplicarFiltros() {
+        const filtros = {
+            marcas: Array.from(document.querySelectorAll('input[type="checkbox"][value]')).filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Marca')).map(cb => cb.value),
+            categorias: Array.from(document.querySelectorAll('input[type="checkbox"][value]')).filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Categoria')).map(cb => cb.value),
+            combustiveis: Array.from(document.querySelectorAll('input[type="checkbox"][value]')).filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Combustível')).map(cb => cb.value),
+            cores: Array.from(document.querySelectorAll('input[type="checkbox"][value]')).filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Cor')).map(cb => cb.value),
+            cambios: Array.from(document.querySelectorAll('input[type="checkbox"][value]')).filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Câmbio')).map(cb => cb.value),
+            caracteristicas: Array.from(document.querySelectorAll('input[type="checkbox"][value]')).filter(cb => cb.checked && cb.closest('.grupo').querySelector('h4').textContent.includes('Características')).map(cb => cb.value),
+            anoMin: parseInt(document.getElementById('anoMin')?.value) || 0,
+            anoMax: parseInt(document.getElementById('anoMax')?.value) || 9999,
+            precoMin: parseInt(document.getElementById('precoMin')?.value) || 0,
+            precoMax: parseInt(document.getElementById('precoMax')?.value) || 999999,
+            kmMin: parseInt(document.getElementById('kmMin')?.value) || 0,
+            kmMax: parseInt(document.getElementById('kmMax')?.value) || 999999
+        };
+
+        motosFiltradas = window.motosData.filter(moto => {
+            if (filtros.marcas.length > 0 && !filtros.marcas.includes(moto.marca)) return false;
+            if (filtros.categorias.length > 0 && !filtros.categorias.includes(moto.categoria)) return false;
+            if (filtros.combustiveis.length > 0 && !filtros.combustiveis.includes(moto.combustivel)) return false;
+            if (filtros.cores.length > 0 && !filtros.cores.includes(moto.cor)) return false;
+            if (filtros.cambios.length > 0 && !filtros.cambios.includes(moto.cambio)) return false;
+            if (filtros.caracteristicas.includes('zeroKm') && !moto.zeroKm) return false;
+            if (filtros.caracteristicas.includes('blindada') && !moto.blindada) return false;
+            if (filtros.caracteristicas.includes('unicoDono') && !moto.unicoDono) return false;
+            if (filtros.caracteristicas.includes('revisada') && !moto.revisada) return false;
+            if (filtros.caracteristicas.includes('garantia') && !moto.garantia) return false;
+            if (moto.ano < filtros.anoMin || moto.ano > filtros.anoMax) return false;
+            if (moto.preco < filtros.precoMin || moto.preco > filtros.precoMax) return false;
+            if (moto.quilometragem < filtros.kmMin || moto.quilometragem > filtros.kmMax) return false;
+            return true;
+        });
+
+        // NOVA LÓGICA: Se não há resultados, redirecionar para motos.html com informação
+        if (motosFiltradas.length === 0) {
+            const termoPesquisado = obterTermoPesquisado();
+            
+            // Se já estamos na página motos.html, mostrar mensagem
+            if (window.location.pathname.includes('motos.html')) {
+                mostrarMensagemSemResultado(termoPesquisado);
+                return;
+            }
+            
+            // Se não estamos na página motos.html, salvar info e redirecionar
+            salvarInfoPesquisa(termoPesquisado);
+            window.location.href = 'motos.html';
+            return;
+        }
+
+        currentPage = 1;
+        gerarCards(motosFiltradas);
+        atualizarPaginacao();
+    }
+
+    // Função para limpar filtros - GLOBAL
+    window.limparFiltros = function() {
+        document.querySelectorAll('.filtros input[type="checkbox"]').forEach(cb => cb.checked = false);
+        document.querySelectorAll('.filtros input[type="number"]').forEach(inp => inp.value = '');
+        document.querySelectorAll('.filtros input[type="range"]').forEach(range => {
+            range.value = range.getAttribute('value') || range.min;
+        });
+        if (input) input.value = '';
+        motosFiltradas = aplicarBuscaLivre([...window.motosData]);
+        currentPage = 1;
+        gerarCards(motosFiltradas);
+        atualizarPaginacao();
+    };
+
+    // Função para aplicar destaque no termo pesquisado
+    function highlightTerm(text, term) {
+        if (!term) return text;
+        const regex = new RegExp(`(${term})`, 'gi');
+        return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    // Função para gerar os cards dinamicamente - MODIFICADA
+    function gerarCards(motos, termoPesquisa = "") {
+        if (!motoList) return;
+        
+        motoList.innerHTML = '';
+
+        if (motos.length === 0) {
+            const termoPesquisado = obterTermoPesquisado();
+            mostrarMensagemSemResultado(termoPesquisado);  // Exibe mensagem de erro
+            return;
+        }
+
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const motosParaExibir = motos.slice(startIndex, endIndex);
+        motoList.className = `motos ${viewMode}`;
+
+        motosParaExibir.forEach(moto => {
+            const card = document.createElement('div');
+            card.classList.add('moto-card');
+
+            // Destaque de termos pesquisados
+            const nomeDestaque = highlightTerm(moto.nome, termoPesquisa);
+            const categoriaDestaque = highlightTerm(moto.categoria, termoPesquisa);
+
+            const imagemPrincipal = moto.imagens && moto.imagens.length > 0 ? moto.imagens[0] : 'placeholder.jpg';
+
+            card.innerHTML = `
+                <div class="card-media">
+                    <img src="images/${imagemPrincipal}" alt="${moto.marca} ${moto.nome}" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="card-content">
+                        <p class="subtitulo">${categoriaDestaque} • USADO • ${moto.ano}/${moto.ano}</p>
+                        <h3>${moto.marca} ${nomeDestaque}</h3>
+                        <p class="preco">R$ ${moto.preco.toLocaleString('pt-BR')}</p>
+                        <div class="info-icons">
+                            <div class="item"><i class="fas fa-calendar"></i><span>${moto.ano}</span></div>
+                            <div class="item"><i class="fas fa-palette"></i><span>${moto.cor}</span></div>
+                            <div class="item"><i class="fas fa-motorcycle"></i><span>${moto.categoria}</span></div>
+                            <div class="item"><i class="fas fa-tachometer-alt"></i><span>${moto.quilometragem.toLocaleString()} km</span></div>
+                            <div class="item"><i class="fas fa-gas-pump"></i><span>${moto.combustivel}</span></div>
+                            <div class="item"><i class="fas fa-cogs"></i><span>${moto.cilindrada || moto.cambio}</span></div>
+                        </div>
+                    </div>
+                    <a href="detalhes.html?id=${moto.id}" class="btn-detalhes">Mais Detalhes</a>
+                </div>
+            `;
+
+            motoList.appendChild(card);
+        });
+
+        atualizarPaginacao();
+    }
+
+
+    // Funções auxiliares
+    function atualizarPaginacao() {
+        const totalPages = Math.ceil(motosFiltradas.length / itemsPerPage);
+        const prevBtn = document.getElementById('prevPageBtn');
+        const nextBtn = document.getElementById('nextPageBtn');
+        
+        if (prevBtn) prevBtn.disabled = currentPage <= 1;
+        if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
+    }
+
+    function filtrarMotos(termo) {
+    if (!termo) return [...window.motosData];
+
+    const tokens = termo
+        .split(/[,\s]+/)
+        .map(t => normalizar(t))
+        .filter(Boolean);
+
+    return window.motosData.filter(moto => {
+        const alvo = normalizar(
+        `${moto.nome} ${moto.marca} ${moto.categoria} ${moto.cor}
+        ${moto.combustivel} ${moto.cambio} ${moto.cilindrada}
+        ${moto.ano} ${moto.quilometragem} ${moto.descricao || ''}`
+        );
+        return tokens.some(tok => alvo.includes(tok));
+    });
+    }
+
+
+    // Função de busca - MODIFICADA
+    function realizarBusca() {
+        const termo = input ? input.value.trim() : '';
+        if (termo) {
+            motosFiltradas = filtrarMotos(termo);
+            
+            // NOVA LÓGICA: Se não há resultados na busca
+            if (motosFiltradas.length === 0) {
+                // Se já estamos na página motos.html, mostrar mensagem
+                if (window.location.pathname.includes('motos.html')) {
+                    mostrarMensagemSemResultado(termo);
+                    return;
+                }
+                
+                // Se não estamos na página motos.html, salvar info e redirecionar
+                salvarInfoPesquisa(termo);
+                window.location.href = 'motos.html';
+                return;
+            }
+            
+            currentPage = 1;
+            gerarCards(motosFiltradas, termo);
+        } else {
+            motosFiltradas = aplicarBuscaLivre([...window.motosData]);
+            currentPage = 1;
+            gerarCards(motosFiltradas);
+        }
+    }
+
+    function lerParametrosBusca() {
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        return {
+            marca: params.get('marca') || "",
+            modelo: params.get('modelo') || "",
+            menor: params.get('menor') || "",
+            maior: params.get('maior') || ""
+        };
+    }
+
+    // Inicializar a página - MODIFICADA
+    function inicializar() {
+        // Verificar se há pesquisa sem resultado salva (apenas na página motos.html)
+        if (window.location.pathname.includes('motos.html')) {
+            if (verificarPesquisaSemResultado()) {
+                return; // Mensagem já foi exibida
+            }
+        }
+
+        const params = lerParametrosBusca();
+        if (params.marca || params.modelo || params.menor || params.maior) {
+            motosFiltradas = window.motosData.filter(moto => {
+                let match = true;
+                if (params.marca && moto.marca !== params.marca) match = false;
+                if (params.modelo && moto.nome !== params.modelo) match = false;
+                if (params.menor && moto.ano < parseInt(params.menor)) match = false;
+                if (params.maior && moto.ano > parseInt(params.maior)) match = false;
+                return match;
+            });
+        }
+
+        gerarCards(motosFiltradas);
+        setupRangeSync();
+
+        if (btn) btn.addEventListener('click', realizarBusca);
+        if (input) {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') realizarBusca();
+            });
+        }
+
+        const aplicarBtn = document.getElementById('aplicarFiltros');
+        const limparBtn = document.getElementById('limparFiltros');
+        
+        if (aplicarBtn) aplicarBtn.addEventListener('click', aplicarFiltros);
+        if (limparBtn) limparBtn.addEventListener('click', limparFiltros);
+
+        const prevBtn = document.getElementById('prevPageBtn');
+        const nextBtn = document.getElementById('nextPageBtn');
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    gerarCards(motosFiltradas);
+                }
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(motosFiltradas.length / itemsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    gerarCards(motosFiltradas);
+                }
+            });
+        }
+
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) {
+            sortSelect.addEventListener('change', (e) => {
+                const sortValue = e.target.value;
+                
+                switch (sortValue) {
+                    case 'preco-asc':
+                        motosFiltradas.sort((a, b) => a.preco - b.preco);
+                        break;
+                    case 'preco-desc':
+                        motosFiltradas.sort((a, b) => b.preco - a.preco);
+                        break;
+                    case 'ano-desc':
+                        motosFiltradas.sort((a, b) => b.ano - a.ano);
+                        break;
+                }
+                
+                currentPage = 1;
+                gerarCards(motosFiltradas);
+            });
+        }
+
+        const itemsSelect = document.getElementById('itemsPerPageSelect');
+        if (itemsSelect) {
+            itemsSelect.addEventListener('change', (e) => {
+                itemsPerPage = parseInt(e.target.value);
+                currentPage = 1;
+                gerarCards(motosFiltradas);
+            });
+        }
+
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+        
+        if (gridViewBtn) {
+            gridViewBtn.addEventListener('click', () => {
+                viewMode = 'grid';
+                gerarCards(motosFiltradas);
+            });
+        }
+        
+        if (listViewBtn) {
+            listViewBtn.addEventListener('click', () => {
+                viewMode = 'list';
+                gerarCards(motosFiltradas);
+            });
+        }
+    }
+
+    inicializar();
+
+    window.verDetalhes = function(motoId) {
+        window.location.href = `detalhes.html?id=${motoId}`;
+    };
+});
+
+
+// ===============================================================
+// CÓDIGO PARA PÁGINA DE DETALHES - FUNCIONAL
+// ===============================================================
+
+// Script específico para página de detalhes - FORA do DOMContentLoaded principal
+document.addEventListener('DOMContentLoaded', () => {
+    // Só executa se estiver na página de detalhes
+    if (!window.location.pathname.includes("detalhes.html")) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const motoId = parseInt(urlParams.get('id'));
     
-    #motoList.home-cards .preco,
-    .motos.home-cards .preco,
-    #destaques .motos .preco {
-        font-size: 20px !important; /* Aumentado de 15px */
-        margin-bottom: 12px !important; /* Aumentado de 8px */
+    if (!motoId) {
+        const nomeMoto = document.getElementById('nomeMoto');
+        if (nomeMoto) nomeMoto.textContent = 'Moto não encontrada';
+        return;
     }
-    
-    #motoList.home-cards .info-icons .item,
-    .motos.home-cards .info-icons .item,
-    #destaques .motos .info-icons .item {
-        height: 65px !important; /* Aumentado de 42px */
-        padding: 10px 8px !important; /* Aumentado de 5px 3px */
-    }
-    
-    #motoList.home-cards .info-icons .item i,
-    .motos.home-cards .info-icons .item i,
-    #destaques .motos .info-icons .item i {
-        font-size: 18px !important; /* Aumentado de 12px */
-        margin-bottom: 4px !important; /* Aumentado de 2px */
-    }
-    
-    #motoList.home-cards .info-icons .item span,
-    .motos.home-cards .info-icons .item span,
-    #destaques .motos .info-icons .item span {
-        font-size: 11px !important; /* Aumentado de 8px */
-        line-height: 1.2 !important; /* Aumentado de 1 */
-    }
-    
-    #motoList.home-cards .btn-detalhes,
-    .motos.home-cards .btn-detalhes,
-    #destaques .motos .btn-detalhes {
-        font-size: 14px !important; /* Aumentado de 10px */
-        padding: 12px 10px !important; /* Aumentado de 8px 6px */
-        min-height: 44px !important; /* Aumentado de 32px */
-    }
-}
 
+    // Aguardar o motosData estar disponível
+    setTimeout(() => {
+        if (!window.motosData) {
+            console.error('motosData não encontrado');
+            return;
+        }
 
-/* Tablets: 3 cards por linha */
-@media (max-width: 1200px) {
-  .home-cards {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 14px !important;
-  }
-}
+        const moto = window.motosData.find(m => m.id === motoId);
+        
+        if (!moto) {
+            const nomeMoto = document.getElementById('nomeMoto');
+            if (nomeMoto) nomeMoto.textContent = 'Moto não encontrada';
+            return;
+        }
 
-/* Tablets pequenos: 2 cards por linha */
-@media (max-width: 900px) {
-  .home-cards {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    padding: 0 16px !important;
-  }
-}
+        // Preencher informações da moto
+        const breadcrumbMoto = document.getElementById('breadcrumbMoto');
+        const categoriaAno = document.getElementById('categoriaAno');
+        const nomeMoto = document.getElementById('nomeMoto');
+        const precoMoto = document.getElementById('precoMoto');
+        const anoMoto = document.getElementById('anoMoto');
+        const quilometragemMoto = document.getElementById('quilometragemMoto');
+        const cambioMoto = document.getElementById('cambioMoto');
+        const corMoto = document.getElementById('corMoto');
+        const combustivelMoto = document.getElementById('combustivelMoto');
+        const categoriaMoto = document.getElementById('categoriaMoto');
+        const descricaoMoto = document.getElementById('descricaoMoto');
 
-/* Mobile: 1 card por linha, maior e mais legível */
-@media (max-width: 768px) {
-  .home-cards {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    padding: 16px !important;
-  }
+        if (breadcrumbMoto) breadcrumbMoto.textContent = `${moto.marca} ${moto.nome}`;
+        if (categoriaAno) categoriaAno.textContent = `${moto.categoria.toUpperCase()} • USADO • ${moto.ano}/${moto.ano}`;
+        if (nomeMoto) nomeMoto.textContent = `${moto.marca} ${moto.nome}`;
+        if (precoMoto) precoMoto.textContent = `R$ ${moto.preco.toLocaleString('pt-BR')}`;
+        if (anoMoto) anoMoto.textContent = moto.ano;
+        if (quilometragemMoto) quilometragemMoto.textContent = `${moto.quilometragem.toLocaleString()} km`;
+        if (cambioMoto) cambioMoto.textContent = moto.cambio;
+        if (corMoto) corMoto.textContent = moto.cor;
+        if (combustivelMoto) combustivelMoto.textContent = moto.combustivel;
+        if (categoriaMoto) categoriaMoto.textContent = moto.categoria;
+        if (descricaoMoto) descricaoMoto.textContent = moto.descricao;
+        
+        // Especificações
+        const marcaMoto = document.getElementById('marcaMoto');
+        const modeloMoto = document.getElementById('modeloMoto');
+        const categoriaSpec = document.getElementById('categoriaSpec');
+        const combustivelSpec = document.getElementById('combustivelSpec');
+        const anoSpec = document.getElementById('anoSpec');
+        const kmSpec = document.getElementById('kmSpec');
 
-  .home-cards .moto-card {
-    max-width: 400px;
-  }
+        if (marcaMoto) marcaMoto.textContent = moto.marca;
+        if (modeloMoto) modeloMoto.textContent = moto.nome;
+        if (categoriaSpec) categoriaSpec.textContent = moto.categoria;
+        if (combustivelSpec) combustivelSpec.textContent = moto.combustivel;
+        if (anoSpec) anoSpec.textContent = moto.ano;
+        if (kmSpec) kmSpec.textContent = `${moto.quilometragem.toLocaleString()} km`;
 
-  .home-cards .card-media {
-    aspect-ratio: 16 / 9 !important;
-  }
+        // Gerar badges
+        const badgesContainer = document.getElementById('badgesContainer');
+        if (badgesContainer) {
+            badgesContainer.innerHTML = '';
+            
+            if (moto.zeroKm) badgesContainer.innerHTML += '<span class="badge badge-positive">Zero KM</span>';
+            if (moto.unicoDono) badgesContainer.innerHTML += '<span class="badge badge-positive">Único Dono</span>';
+            if (moto.revisada) badgesContainer.innerHTML += '<span class="badge badge-positive">Revisada</span>';
+            if (moto.garantia) badgesContainer.innerHTML += '<span class="badge badge-positive">Garantia</span>';
+        }
 
-  .home-cards .card-body { 
-    padding: 16px !important; 
-  }
+        // GALERIA DE IMAGENS
+        const imagens = moto.imagens || ['placeholder.jpg'];
+        let currentImageIndex = 0;
+        const imagemPrincipal = document.getElementById('imagemPrincipal');
+        const miniaturas = document.getElementById('miniaturas');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        function renderGaleria() {
+            if (imagemPrincipal) {
+                imagemPrincipal.src = `images/${imagens[currentImageIndex]}`;
+                imagemPrincipal.alt = `${moto.marca} ${moto.nome} - Foto ${currentImageIndex + 1}`;
+            }
+            
+            if (miniaturas) {
+                miniaturas.innerHTML = '';
+                imagens.forEach((img, index) => {
+                    const miniatura = document.createElement('div');
+                    miniatura.className = `miniatura ${index === currentImageIndex ? 'active' : ''}`;
+                    miniatura.innerHTML = `<img src="images/${img}" alt="Imagem ${index + 1}">`;
+                    miniatura.onclick = () => {
+                        currentImageIndex = index;
+                        renderGaleria();
+                    };
+                    miniaturas.appendChild(miniatura);
+                });
+            }
+        }
 
-  .home-cards h3 { 
-    font-size: 18px !important; 
-    margin-bottom: 8px !important;
-  }
+        renderGaleria();
 
-  .home-cards .subtitulo { 
-    font-size: 12px !important; 
-    margin-bottom: 6px !important;
-  }
+        // Navegação de imagens
+        if (prevBtn) {
+            prevBtn.onclick = () => {
+                currentImageIndex = currentImageIndex === 0 ? imagens.length - 1 : currentImageIndex - 1;
+                renderGaleria();
+            };
+        }
 
-  .home-cards .preco { 
-    font-size: 20px !important; 
-    margin-bottom: 12px !important;
-  }
+        if (nextBtn) {
+            nextBtn.onclick = () => {
+                currentImageIndex = currentImageIndex === imagens.length - 1 ? 0 : currentImageIndex + 1;
+                renderGaleria();
+            };
+        }
 
-  .home-cards .info-icons { 
-    gap: 8px !important; 
-    margin-bottom: 15px !important;
-  }
+        // Configurar botões de ação
+        const btnWhatsApp = document.getElementById('btnWhatsApp');
+        if (btnWhatsApp) {
+            const mensagem = `Olá! Tenho interesse na ${moto.marca} ${moto.nome} ${moto.ano} por R$ ${moto.preco.toLocaleString('pt-BR')}. Podemos conversar?`;
+            btnWhatsApp.href = `https://wa.me/5513997730431?text=${encodeURIComponent(mensagem)}`;
+        }
 
-  .home-cards .info-icons .item { 
-    height: 60px !important; 
-    padding: 8px 6px !important; 
-  }
+        const btnCompartilhar = document.getElementById('btnCompartilhar');
+        if (btnCompartilhar) {
+            btnCompartilhar.onclick = () => {
+                if (navigator.share) {
+                    navigator.share({
+                        title: `${moto.marca} ${moto.nome}`,
+                        text: `Confira esta ${moto.marca} ${moto.nome} por R$ ${moto.preco.toLocaleString('pt-BR')}`,
+                        url: window.location.href
+                    });
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Link copiado para a área de transferência!');
+                }
+            };
+        }
 
-  .home-cards .info-icons .item i { 
-    font-size: 18px !important; 
-    margin-bottom: 4px !important;
-  }
+        // Gerar motos relacionadas
+        const motosRelacionadas = window.motosData.filter(m => 
+            m.id !== moto.id && 
+            (m.marca === moto.marca || m.categoria === moto.categoria)
+        ).slice(0, 3);
 
-  .home-cards .info-icons .item span { 
-    font-size: 11px !important; 
-  }
-
-  .home-cards .btn-detalhes { 
-    font-size: 14px !important; 
-    padding: 12px 10px !important; 
-    min-height: 44px !important;
-  }
-}
-
-/* ==== FIX: cards ocupam 100% da largura no mobile ==== */
-@media (max-width: 900px) {
-  #motoList.home-cards,
-  .motos.home-cards,
-  #destaques .motos {
-    grid-template-columns: 1fr !important;
-    max-width: none !important;
-    padding: 16px !important;
-  }
-
-  #motoList.home-cards .moto-card,
-  .motos.home-cards .moto-card,
-  #destaques .motos .moto-card {
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-}
-
-@media (max-width: 560px) {
-  .motos,
-  #motoList,
-  .motos.home-cards,
-  #motoList.home-cards {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-
-/* ==== FIX: cards em motos.html ocupam 100% no mobile ==== */
-@media (max-width: 900px) {
-  #motoList .moto-card {
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-}
-
-@media (max-width: 560px) {
-  #motoList {
-    grid-template-columns: 1fr !important;
-    padding: 16px !important;
-  }
-}
-
-
-/* ==== FIX: Barra do catálogo responsiva e simétrica ==== */
-@media (max-width: 768px) {
-  .catalog-toolbar {
-    max-width: 100% !important;   /* ocupa só a largura da tela */
-    margin: 15px auto !important; /* centralizada */
-    padding: 10px !important;     /* menos espaçamento lateral */
-    border-radius: 8px;           /* mantém visual suave */
-  }
-
-  .toolbar-left {
-    flex-direction: column;       /* quebra em 2 linhas */
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .toolbar-right {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .toolbar-right select,
-  .toolbar-right button {
-    width: 100%;                  /* cada item ocupa linha inteira */
-    max-width: 250px;
-  }
-}
-
-/* CONTATO — forçar layout no mobile */
-@media (max-width: 768px) {
-  .contato .contato-box{
-    display:flex !important;
-    flex-direction: column !important;   /* botão vai pra baixo */
-    align-items:center !important;
-    text-align:center !important;
-    width:100% !important;
-    max-width:820px !important;
-    height:auto !important;
-    margin:0 auto 16px !important;
-    padding:16px !important;
-    gap:12px !important;
-  }
-  .contato .contato-btn{
-    position: static !important;         /* sem deslizar no mobile */
-    width:100% !important;
-    margin-top:6px !important;
-    border-radius:10px !important;
-    padding:14px 12px !important;
-    transition:none !important;
-  }
-  .contato .contato-box:hover .contato-btn{ bottom:auto !important; }
-}
-
-/* Espaço extra acima da linha "categoria • usado • ano" no MOBILE */
-@media (max-width: 768px) {
-  .moto-header { 
-    margin-top: 12px;      /* afasta o texto dos thumbs */
-  }
-  /* se quiser ainda um toque a mais, descomente a linha abaixo */
-  /* .categoria-ano { margin-top: 6px; } */
-}
-
-/* ===== FIX: Unificar tamanho dos cards da HOME com Motos no MOBILE ===== */
-@media (max-width: 768px) {
-  #motoList.home-cards .moto-card,
-  .motos.home-cards .moto-card,
-  #destaques .motos .moto-card {
-    max-width: none !important;
-    width: 100% !important;
-    font-size: inherit !important;
-  }
-  #motoList.home-cards h3,
-  .motos.home-cards h3,
-  #destaques .motos h3 {
-    font-size: 18px !important; /* mesmo tamanho de motos.html */
-  }
-  #motoList.home-cards .preco,
-  .motos.home-cards .preco,
-  #destaques .motos .preco {
-    font-size: 22px !important;
-  }
-  #motoList.home-cards .info-icons .item,
-  .motos.home-cards .info-icons .item,
-  #destaques .motos .info-icons .item {
-    height: 64px !important;
-    padding: 10px 6px !important;
-  }
-  #motoList.home-cards .info-icons .item span,
-  .motos.home-cards .info-icons .item span,
-  #destaques .motos .info-icons .item span {
-    font-size: 12px !important;
-  }
-}
-
-/* Centralizar completamente o "Mapa do site" apenas em telas menores */
-@media (max-width: 1024px) {
-  .footer-content {
-    justify-content: center;   /* centraliza os blocos do rodapé */
-    text-align: center;        /* alinha conteúdo interno no centro */
-  }
-
-  .site-map {
-    margin: 0 auto;            /* garante o bloco no centro */
-    width: 100%;
-  }
-
-  .site-map h4 {
-    text-align: center;        /* título centralizado */
-  }
-
-  /* --- centraliza a LISTA e cada item --- */
-  .site-map ul {
-    display: block;            /* ocupa 100% do bloco */
-    text-align: center;        /* centraliza o texto dos itens */
-    padding-left: 0;           /* remove recuo padrão em alguns navegadores */
-  }
-
-  .site-map ul li {
-    list-style: none;          /* garante sem bolinha */
-    margin: 8px 0;
-  }
-}
-
-.destaques-lead {
-    /* Comportamento padrão para PC */
-    white-space: normal; /* Permite quebra de linha no PC */
-}
-
-/* Força a frase a ficar em uma linha só no celular */
-@media (max-width: 768px) {
-    .destaques-lead {
-        white-space: nowrap; /* Impede quebra de linha no celular */
-        overflow: visible;   /* Permite que o texto ocupe mais espaço */
-        text-overflow: unset; /* Remove o "..." */
-        width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
-        display: block; /* Faz o elemento ocupar toda a largura */
-        word-wrap: normal; /* Impede a quebra de palavras de maneira forçada */
-        word-break: keep-all; /* Garante que a frase não quebre de forma indesejada */
-        box-sizing: border-box; /* Ajusta o tamanho do contêiner para incluir bordas e padding */
-    }
-}
-
-
-
-
-
-
+        const container = document.getElementById('motosRelacionadas');
+        if (container && motosRelacionadas.length > 0) {
+            container.style.display = motosRelacionadas.length > 1 ? 'grid' : 'flex';
+            container.style.gridTemplateColumns = motosRelacionadas.length > 1 ? `repeat(${Math.min(motosRelacionadas.length, 3)}, 1fr)` : '';
+            container.style.justifyContent = motosRelacionadas.length === 1 ? 'center' : '';
+            
+            container.innerHTML = '';
+            motosRelacionadas.forEach(motoRel => {
+                const card = document.createElement('div');
+                card.className = 'moto-card';
+                
+                // Usar primeira imagem do array para motos relacionadas
+                const imagemRelacionada = motoRel.imagens && motoRel.imagens.length > 0 ? motoRel.imagens[0] : 'placeholder.jpg';
+                
+                card.innerHTML = `
+                    <div class="card-media">
+                        <img src="images/${imagemRelacionada}" alt="${motoRel.marca} ${motoRel.nome}">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-content">
+                            <p class="subtitulo">${motoRel.categoria.toUpperCase()} • USADO • ${motoRel.ano}/${motoRel.ano}</p>
+                            <h3 class="modelo">${motoRel.marca} ${motoRel.nome}</h3>
+                            <p class="preco">R$ ${motoRel.preco.toLocaleString('pt-BR')}</p>
+                            <div class="info-icons">
+                                <div class="item"><i class="fas fa-calendar"></i><span>${motoRel.ano}</span></div>
+                                <div class="item"><i class="fas fa-palette"></i><span>${motoRel.cor}</span></div>
+                                <div class="item"><i class="fas fa-motorcycle"></i><span>${motoRel.categoria}</span></div>
+                                <div class="item"><i class="fas fa-tachometer-alt"></i><span>${motoRel.quilometragem.toLocaleString()} km</span></div>
+                                <div class="item"><i class="fas fa-gas-pump"></i><span>${motoRel.combustivel}</span></div>
+                                <div class="item"><i class="fas fa-cogs"></i><span>${motoRel.cambio}</span></div>
+                            </div>
+                        </div>
+                        <a href="detalhes.html?id=${motoRel.id}" class="btn-detalhes">Mais Detalhes</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        } else if (container) {
+            container.innerHTML = '<p style="text-align: center; color: #666;">Nenhuma moto relacionada encontrada.</p>';
+        }
+    }, 100); // Pequeno delay para garantir que motosData esteja carregado
+});
