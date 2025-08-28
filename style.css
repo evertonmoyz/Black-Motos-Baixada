@@ -1066,9 +1066,13 @@ body { overscroll-behavior-y: contain; }
 @media (max-width: 768px) {
     .destaques-lead {
         white-space: nowrap; /* Impede quebra de linha no celular */
-        overflow: hidden; /* Impede que o texto ultrapasse o limite */
-        text-overflow: ellipsis; /* Exibe "..." se o texto for maior que o espaço disponível */
+        overflow: visible;   /* Permite que o texto ocupe mais espaço */
+        text-overflow: unset; /* Remove o "..." */
+        width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+        display: block; /* Faz o elemento ocupar toda a largura */
     }
 }
+
+
 
 
