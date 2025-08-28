@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cor: "Prata",
             quilometragem: 15000,
             cambio: "Manual",
-            imagens: ["Kay.jpg", "Kay.jpg", "Kay.jpg", "Kay.jpg", "Kay.jpg", "MT07.jpg"],
+            imagens: ["MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg"],
             cilindrada: "160cc",
             descricao: "Motocicleta em ótimo estado, único dono e com 15.000 km rodados. Ideal para uso urbano com excelente economia de combustível.",
             zeroKm: false,
