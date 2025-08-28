@@ -1028,23 +1028,27 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* Centralização total da seção mapa no mobile */
+/* Centralizar o bloco "Mapa do site" no mobile,
+   mantendo o desktop como está */
 @media (max-width: 768px) {
-  .mapa {
-    flex-direction: column;    /* empilha em coluna */
-    align-items: center;       /* centraliza horizontalmente */
-    text-align: center;        /* garante alinhamento interno */
+  .footer-content {
+    justify-content: center;   /* centraliza os blocos do rodapé */
+    text-align: center;        /* alinha títulos/descrições quando couber */
   }
-  .mapa-info {
-    text-align: center !important; /* sobrescreve o left */
-    margin-bottom: 20px;
-    max-width: 100%;              /* ocupa largura total */
+
+  .site-map {
+    margin: 0 auto;            /* garante centralização do bloco */
   }
-  .mapa iframe {
-    display: block;
-    margin: 0 auto;               /* centraliza iframe */
-    width: 100%;                  /* ocupa a largura do container */
-    max-width: 600px;             /* respeita limite do desktop */
+
+  .site-map h4 {
+    text-align: center;
+  }
+
+  /* Lista centrada como bloco, itens continuam alinhados à esquerda
+     (mais legível) */
+  .site-map ul {
+    display: inline-block;
+    text-align: left;
   }
 }
 
