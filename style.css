@@ -1028,20 +1028,26 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* Ajuste para telas menores */
+/* Centralização total da seção mapa no mobile */
 @media (max-width: 768px) {
   .mapa {
-    flex-direction: column;     /* empilha os elementos */
-    text-align: center;         /* centraliza o conteúdo */
+    flex-direction: column;    /* empilha em coluna */
+    align-items: center;       /* centraliza horizontalmente */
+    text-align: center;        /* garante alinhamento interno */
   }
   .mapa-info {
-    text-align: center;         /* sobrescreve o alinhamento à esquerda */
-    margin-bottom: 20px;        /* dá espaço antes do mapa */
+    text-align: center !important; /* sobrescreve o left */
+    margin-bottom: 20px;
+    max-width: 100%;              /* ocupa largura total */
   }
   .mapa iframe {
-    margin: 0 auto;             /* centraliza horizontalmente */
+    display: block;
+    margin: 0 auto;               /* centraliza iframe */
+    width: 100%;                  /* ocupa a largura do container */
+    max-width: 600px;             /* respeita limite do desktop */
   }
 }
+
 
 
 
