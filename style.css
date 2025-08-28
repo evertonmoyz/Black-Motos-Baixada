@@ -1028,24 +1028,32 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
-/* Centralizar "Mapa do site" apenas em telas menores (celular/tablet) */
+/* Centralizar completamente o "Mapa do site" apenas em telas menores */
 @media (max-width: 1024px) {
   .footer-content {
-    justify-content: center;   /* centraliza os blocos no rodapé */
-    text-align: center;        /* centraliza o texto interno */
+    justify-content: center;   /* centraliza os blocos do rodapé */
+    text-align: center;        /* alinha conteúdo interno no centro */
   }
 
   .site-map {
-    margin: 0 auto;            /* garante centralização */
+    margin: 0 auto;            /* garante o bloco no centro */
+    width: 100%;
   }
 
   .site-map h4 {
-    text-align: center;        /* centraliza o título */
+    text-align: center;        /* título centralizado */
   }
 
+  /* --- centraliza a LISTA e cada item --- */
   .site-map ul {
-    display: inline-block;     /* lista ocupa só o necessário */
-    text-align: left;          /* itens continuam alinhados à esquerda */
+    display: block;            /* ocupa 100% do bloco */
+    text-align: center;        /* centraliza o texto dos itens */
+    padding-left: 0;           /* remove recuo padrão em alguns navegadores */
+  }
+
+  .site-map ul li {
+    list-style: none;          /* garante sem bolinha */
+    margin: 8px 0;
   }
 }
 
