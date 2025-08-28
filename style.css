@@ -1057,4 +1057,18 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
+.destaques-lead {
+    /* Comportamento padrão para PC */
+    white-space: normal; /* Permite quebra de linha no PC */
+}
+
+/* Força a frase a ficar em uma linha só no celular */
+@media (max-width: 768px) {
+    .destaques-lead {
+        white-space: nowrap; /* Impede quebra de linha no celular */
+        overflow: hidden; /* Impede que o texto ultrapasse o limite */
+        text-overflow: ellipsis; /* Exibe "..." se o texto for maior que o espaço disponível */
+    }
+}
+
 
