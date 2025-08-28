@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cor: "Vermelha",
             quilometragem: 30000,
             cambio: "Manual",
-            imagens: ["MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg"],
+            imagens: ["MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg", "MT07.jpg"],
             cilindrada: "689cc",
             descricao: "Motocicleta esportiva de excelente desempenho com motor bicilíndrico de 689cc.",
             zeroKm: false,
