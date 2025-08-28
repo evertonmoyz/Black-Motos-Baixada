@@ -1027,3 +1027,26 @@ body { overscroll-behavior-y: contain; }
     font-size: 12px !important;
   }
 }
+
+/* Centralizar "Mapa do site" apenas em telas menores (celular/tablet) */
+@media (max-width: 1024px) {
+  .footer-content {
+    justify-content: center;   /* centraliza os blocos no rodapé */
+    text-align: center;        /* centraliza o texto interno */
+  }
+
+  .site-map {
+    margin: 0 auto;            /* garante centralização */
+  }
+
+  .site-map h4 {
+    text-align: center;        /* centraliza o título */
+  }
+
+  .site-map ul {
+    display: inline-block;     /* lista ocupa só o necessário */
+    text-align: left;          /* itens continuam alinhados à esquerda */
+  }
+}
+
+
