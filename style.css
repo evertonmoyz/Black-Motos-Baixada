@@ -1027,35 +1027,3 @@ body { overscroll-behavior-y: contain; }
     font-size: 12px !important;
   }
 }
-
-/* Centralizar o bloco "Mapa do site" no mobile,
-   mantendo o desktop como está */
-@media (max-width: 768px) {
-  .footer-content {
-    justify-content: center;   /* centraliza os blocos do rodapé */
-    text-align: center;        /* alinha títulos/descrições quando couber */
-  }
-
-  .site-map {
-    margin: 0 auto;            /* garante centralização do bloco */
-  }
-
-  .site-map h4 {
-    text-align: center;
-  }
-
-  /* Lista centrada como bloco, itens continuam alinhados à esquerda
-     (mais legível) */
-  .site-map ul {
-    display: inline-block;
-    text-align: left;
-  }
-}
-
-
-
-
-
-
-
-
