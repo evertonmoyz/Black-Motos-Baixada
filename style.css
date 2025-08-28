@@ -1070,8 +1070,13 @@ body { overscroll-behavior-y: contain; }
         text-overflow: unset; /* Remove o "..." */
         width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
         display: block; /* Faz o elemento ocupar toda a largura */
+        word-wrap: normal; /* Impede a quebra de palavras de maneira forçada */
+        word-break: keep-all; /* Garante que a frase não quebre de forma indesejada */
+        box-sizing: border-box; /* Ajusta o tamanho do contêiner para incluir bordas e padding */
     }
 }
+
+
 
 
 
