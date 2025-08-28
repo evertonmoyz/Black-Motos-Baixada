@@ -1028,6 +1028,21 @@ body { overscroll-behavior-y: contain; }
   }
 }
 
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .mapa {
+    flex-direction: column;     /* empilha os elementos */
+    text-align: center;         /* centraliza o conteúdo */
+  }
+  .mapa-info {
+    text-align: center;         /* sobrescreve o alinhamento à esquerda */
+    margin-bottom: 20px;        /* dá espaço antes do mapa */
+  }
+  .mapa iframe {
+    margin: 0 auto;             /* centraliza horizontalmente */
+  }
+}
+
 
 
 
